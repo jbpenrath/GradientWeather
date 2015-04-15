@@ -18,7 +18,6 @@ class GradientView: UIView {
     required init(coder aDecoder: NSCoder) {
 
         weather = YQL.getCurrentWeather("64.143136", longitude: "-21.940309")
-        println(weather)
         
 //        var date:NSDate = weather.valueForKeyPath("global.date") as! NSDate
         
@@ -34,7 +33,8 @@ class GradientView: UIView {
     
     override func drawRect(rect: CGRect) {
         
-        let hour:Int = getHours(NSDate())
+//        let hour:Int = getHours(NSDate())
+        let hour:Int = 12
         
         switch hour {
             case 0..<4:

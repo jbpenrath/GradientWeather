@@ -16,6 +16,7 @@ class Drop: CAGradientLayer {
     var masterAnimation:CAAnimationGroup!
     var distance:CGFloat = 0.0
     var heightOfSuperLayer:CGFloat = 0.0
+    let velocity:CGFloat = 8/1000
     
     init(frame: CGRect) {
         super.init();
@@ -42,7 +43,7 @@ class Drop: CAGradientLayer {
         
         // Animated Drop Fall
         dropFallAnimation = CABasicAnimation(keyPath: "position.y")
-        dropFallAnimation.duration = CFTimeInterval(3.5*distance/1000)
+        dropFallAnimation.duration = CFTimeInterval(distance*velocity)
         dropFallAnimation.fromValue = self.position.y
         dropFallAnimation.toValue = self.heightOfSuperLayer + self.bounds.height
         
@@ -68,7 +69,7 @@ class Drop: CAGradientLayer {
             // Update randomly many properties
             self.position.y = -(self.bounds.height + CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer))))
             distance = self.position.y + self.heightOfSuperLayer*1.5
-            dropFallAnimation.duration = CFTimeInterval(3.5*distance/1000)
+            dropFallAnimation.duration = CFTimeInterval(distance*velocity)
             masterAnimation.duration = dropFallAnimation.duration
 
             // Let's go to animate!

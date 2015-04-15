@@ -10,14 +10,15 @@ import UIKit
 
 class Rain:CALayer {
     
-    init(frame: CGRect, numberOfDrops: Int) {
+    init(frame: CGRect) {
         super.init()
         
         self.frame = frame
-
+        let numberOfDrops:CGFloat = self.frame.width/40
+        
         // Rain
-        for(var i = 0; i < numberOfDrops; i++) {
-            let drop = Drop(frame: CGRect(x: CGFloat(i)*self.frame.width/CGFloat(numberOfDrops) + CGFloat(arc4random_uniform(10)), y: 0, width: CGFloat(5+arc4random_uniform(10)), height: self.frame.height))
+        for(var i:CGFloat = 0; i < numberOfDrops; i++) {
+            let drop = Drop(frame: CGRect(x: i*self.frame.width/numberOfDrops + CGFloat(arc4random_uniform(10)), y: 0, width: CGFloat(5+arc4random_uniform(10)), height: self.frame.height))
             self.addSublayer(drop)
         }
         

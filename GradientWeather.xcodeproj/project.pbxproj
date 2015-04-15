@@ -15,8 +15,11 @@
 		779D74921AD9583200982565 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D74911AD9583200982565 /* Wind.swift */; };
 		779D749C1ADB878600982565 /* Snow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D749B1ADB878600982565 /* Snow.swift */; };
 		779D749E1ADB973600982565 /* Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D749D1ADB973600982565 /* Sky.swift */; };
+		77EE71981ADE38B2008B2804 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE71971ADE38B2008B2804 /* IntroView.swift */; };
+		77EE719A1ADE38BF008B2804 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE71991ADE38BF008B2804 /* VideoView.swift */; };
+		77EE719F1ADE39C1008B2804 /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE719E1ADE39C1008B2804 /* SceneView.swift */; };
 		77F2A8F61ACDADBA00C5FC98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2A8F51ACDADBA00C5FC98 /* AppDelegate.swift */; };
-		77F2A8F81ACDADBA00C5FC98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2A8F71ACDADBA00C5FC98 /* ViewController.swift */; };
+		77F2A8F81ACDADBA00C5FC98 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2A8F71ACDADBA00C5FC98 /* SceneViewController.swift */; };
 		77F2A8FB1ACDADBA00C5FC98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F2A8F91ACDADBA00C5FC98 /* Main.storyboard */; };
 		77F2A8FD1ACDADBA00C5FC98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F2A8FC1ACDADBA00C5FC98 /* Images.xcassets */; };
 		77F2A9001ACDADBA00C5FC98 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F2A8FE1ACDADBA00C5FC98 /* LaunchScreen.xib */; };
@@ -45,10 +48,13 @@
 		779D74911AD9583200982565 /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
 		779D749B1ADB878600982565 /* Snow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snow.swift; sourceTree = "<group>"; };
 		779D749D1ADB973600982565 /* Sky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sky.swift; sourceTree = "<group>"; };
+		77EE71971ADE38B2008B2804 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		77EE71991ADE38BF008B2804 /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		77EE719E1ADE39C1008B2804 /* SceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
 		77F2A8F01ACDADBA00C5FC98 /* GradientWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F2A8F41ACDADBA00C5FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77F2A8F51ACDADBA00C5FC98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77F2A8F71ACDADBA00C5FC98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77F2A8F71ACDADBA00C5FC98 /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		77F2A8FA1ACDADBA00C5FC98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77F2A8FC1ACDADBA00C5FC98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		77F2A8FF1ACDADBA00C5FC98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -93,13 +99,13 @@
 			name = Symbols;
 			sourceTree = "<group>";
 		};
-		771CDE651AD8396C003B4005 /* Gradients Classes */ = {
+		771CDE651AD8396C003B4005 /* IllustrationView */ = {
 			isa = PBXGroup;
 			children = (
 				77F2A9171ACDCC6800C5FC98 /* Gradients.swift */,
 				934B6ACF1ACEC16700939CAB /* GradientView.swift */,
 			);
-			name = "Gradients Classes";
+			name = IllustrationView;
 			sourceTree = "<group>";
 		};
 		779D74931AD967CD00982565 /* Libraries */ = {
@@ -116,6 +122,34 @@
 				290EB5241ADD1B02002E9ECB /* YQL.swift */,
 			);
 			name = "Yahoo!Weather";
+			sourceTree = "<group>";
+		};
+		77EE719B1ADE38EE008B2804 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				77F2A8F71ACDADBA00C5FC98 /* SceneViewController.swift */,
+				77EE719E1ADE39C1008B2804 /* SceneView.swift */,
+				77EE719C1ADE3911008B2804 /* IntroView */,
+				771CDE651AD8396C003B4005 /* IllustrationView */,
+				77EE719D1ADE392B008B2804 /* VideoView */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		77EE719C1ADE3911008B2804 /* IntroView */ = {
+			isa = PBXGroup;
+			children = (
+				77EE71971ADE38B2008B2804 /* IntroView.swift */,
+			);
+			name = IntroView;
+			sourceTree = "<group>";
+		};
+		77EE719D1ADE392B008B2804 /* VideoView */ = {
+			isa = PBXGroup;
+			children = (
+				77EE71991ADE38BF008B2804 /* VideoView.swift */,
+			);
+			name = VideoView;
 			sourceTree = "<group>";
 		};
 		77F2A8E71ACDADBA00C5FC98 = {
@@ -139,11 +173,10 @@
 		77F2A8F21ACDADBA00C5FC98 /* GradientWeather */ = {
 			isa = PBXGroup;
 			children = (
-				779D74931AD967CD00982565 /* Libraries */,
 				77F2A8F51ACDADBA00C5FC98 /* AppDelegate.swift */,
-				77F2A8F71ACDADBA00C5FC98 /* ViewController.swift */,
-				771CDE651AD8396C003B4005 /* Gradients Classes */,
+				77EE719B1ADE38EE008B2804 /* Scene */,
 				771CDE641AD8395C003B4005 /* Symbols */,
+				779D74931AD967CD00982565 /* Libraries */,
 				77F2A8F91ACDADBA00C5FC98 /* Main.storyboard */,
 				77F2A8FC1ACDADBA00C5FC98 /* Images.xcassets */,
 				77F2A8FE1ACDADBA00C5FC98 /* LaunchScreen.xib */,
@@ -281,10 +314,13 @@
 				934B6ACE1ACE9EE000939CAB /* Sun.swift in Sources */,
 				779D749E1ADB973600982565 /* Sky.swift in Sources */,
 				779D74921AD9583200982565 /* Wind.swift in Sources */,
-				77F2A8F81ACDADBA00C5FC98 /* ViewController.swift in Sources */,
+				77EE719F1ADE39C1008B2804 /* SceneView.swift in Sources */,
+				77F2A8F81ACDADBA00C5FC98 /* SceneViewController.swift in Sources */,
 				779D749C1ADB878600982565 /* Snow.swift in Sources */,
 				770949691AD852FA00781DC1 /* Rain.swift in Sources */,
+				77EE719A1ADE38BF008B2804 /* VideoView.swift in Sources */,
 				934B6AD01ACEC16700939CAB /* GradientView.swift in Sources */,
+				77EE71981ADE38B2008B2804 /* IntroView.swift in Sources */,
 				7702D7051AD1566200956F54 /* Drop.swift in Sources */,
 				779D74901AD92BD000982565 /* SnowFlake.swift in Sources */,
 				77344ABE1AD595F9006C5FC9 /* Cloud.swift in Sources */,
