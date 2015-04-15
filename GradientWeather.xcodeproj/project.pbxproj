@@ -8,6 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		290EB5251ADD1B02002E9ECB /* YQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290EB5241ADD1B02002E9ECB /* YQL.swift */; };
+		2917B1401ADE568300B1F8E7 /* Apercu-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1371ADE568300B1F8E7 /* Apercu-Bold.otf */; };
+		2917B1411ADE568300B1F8E7 /* Apercu-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1381ADE568300B1F8E7 /* Apercu-BoldItalic.otf */; };
+		2917B1421ADE568300B1F8E7 /* Apercu-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1391ADE568300B1F8E7 /* Apercu-Italic.otf */; };
+		2917B1431ADE568300B1F8E7 /* Apercu-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B13A1ADE568300B1F8E7 /* Apercu-Light.otf */; };
+		2917B1441ADE568300B1F8E7 /* Apercu-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B13B1ADE568300B1F8E7 /* Apercu-LightItalic.otf */; };
+		2917B1451ADE568300B1F8E7 /* Apercu-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B13C1ADE568300B1F8E7 /* Apercu-Medium.otf */; };
+		2917B1461ADE568300B1F8E7 /* Apercu-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B13D1ADE568300B1F8E7 /* Apercu-MediumItalic.otf */; };
+		2917B1471ADE568300B1F8E7 /* Apercu-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B13E1ADE568300B1F8E7 /* Apercu-Mono.otf */; };
+		2917B1481ADE568300B1F8E7 /* Apercu-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B13F1ADE568300B1F8E7 /* Apercu-Regular.otf */; };
+		2917B1551ADE569C00B1F8E7 /* National-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1491ADE569C00B1F8E7 /* National-Bold.otf */; };
+		2917B1561ADE569C00B1F8E7 /* National-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B14A1ADE569C00B1F8E7 /* National-BoldItalic.otf */; };
+		2917B1571ADE569C00B1F8E7 /* National-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B14B1ADE569C00B1F8E7 /* National-Book.otf */; };
+		2917B1581ADE569C00B1F8E7 /* National-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B14C1ADE569C00B1F8E7 /* National-BookItalic.otf */; };
+		2917B1591ADE569C00B1F8E7 /* National-Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B14D1ADE569C00B1F8E7 /* National-Extrabold.otf */; };
+		2917B15A1ADE569C00B1F8E7 /* National-ExtraboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B14E1ADE569C00B1F8E7 /* National-ExtraboldItalic.otf */; };
+		2917B15B1ADE569C00B1F8E7 /* National-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B14F1ADE569C00B1F8E7 /* National-Medium.otf */; };
+		2917B15C1ADE569C00B1F8E7 /* National-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1501ADE569C00B1F8E7 /* National-MediumItalic.otf */; };
+		2917B15D1ADE569C00B1F8E7 /* National-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1511ADE569C00B1F8E7 /* National-Regular.otf */; };
+		2917B15E1ADE569C00B1F8E7 /* National-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1521ADE569C00B1F8E7 /* National-RegularItalic.otf */; };
+		2917B15F1ADE569C00B1F8E7 /* National-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1531ADE569C00B1F8E7 /* National-Semibold.otf */; };
+		2917B1601ADE569C00B1F8E7 /* National-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2917B1541ADE569C00B1F8E7 /* National-SemiboldItalic.otf */; };
+		2917B1621ADE5FAA00B1F8E7 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2917B1611ADE5FAA00B1F8E7 /* SceneViewController.swift */; };
+		299802051ADE969200390964 /* Gitano.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 299802041ADE969200390964 /* Gitano.mp4 */; };
 		7702D7051AD1566200956F54 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7702D7041AD1566200956F54 /* Drop.swift */; };
 		770949691AD852FA00781DC1 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770949681AD852FA00781DC1 /* Rain.swift */; };
 		77344ABE1AD595F9006C5FC9 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77344ABD1AD595F9006C5FC9 /* Cloud.swift */; };
@@ -19,7 +42,7 @@
 		77EE719A1ADE38BF008B2804 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE71991ADE38BF008B2804 /* VideoView.swift */; };
 		77EE719F1ADE39C1008B2804 /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE719E1ADE39C1008B2804 /* SceneView.swift */; };
 		77F2A8F61ACDADBA00C5FC98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2A8F51ACDADBA00C5FC98 /* AppDelegate.swift */; };
-		77F2A8F81ACDADBA00C5FC98 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2A8F71ACDADBA00C5FC98 /* SceneViewController.swift */; };
+		77F2A8F81ACDADBA00C5FC98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2A8F71ACDADBA00C5FC98 /* ViewController.swift */; };
 		77F2A8FB1ACDADBA00C5FC98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F2A8F91ACDADBA00C5FC98 /* Main.storyboard */; };
 		77F2A8FD1ACDADBA00C5FC98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F2A8FC1ACDADBA00C5FC98 /* Images.xcassets */; };
 		77F2A9001ACDADBA00C5FC98 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F2A8FE1ACDADBA00C5FC98 /* LaunchScreen.xib */; };
@@ -41,6 +64,29 @@
 
 /* Begin PBXFileReference section */
 		290EB5241ADD1B02002E9ECB /* YQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQL.swift; sourceTree = "<group>"; };
+		2917B1371ADE568300B1F8E7 /* Apercu-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Bold.otf"; path = "GradientWeather/Apercu-Bold.otf"; sourceTree = "<group>"; };
+		2917B1381ADE568300B1F8E7 /* Apercu-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-BoldItalic.otf"; path = "GradientWeather/Apercu-BoldItalic.otf"; sourceTree = "<group>"; };
+		2917B1391ADE568300B1F8E7 /* Apercu-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Italic.otf"; path = "GradientWeather/Apercu-Italic.otf"; sourceTree = "<group>"; };
+		2917B13A1ADE568300B1F8E7 /* Apercu-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Light.otf"; path = "GradientWeather/Apercu-Light.otf"; sourceTree = "<group>"; };
+		2917B13B1ADE568300B1F8E7 /* Apercu-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-LightItalic.otf"; path = "GradientWeather/Apercu-LightItalic.otf"; sourceTree = "<group>"; };
+		2917B13C1ADE568300B1F8E7 /* Apercu-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Medium.otf"; path = "GradientWeather/Apercu-Medium.otf"; sourceTree = "<group>"; };
+		2917B13D1ADE568300B1F8E7 /* Apercu-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-MediumItalic.otf"; path = "GradientWeather/Apercu-MediumItalic.otf"; sourceTree = "<group>"; };
+		2917B13E1ADE568300B1F8E7 /* Apercu-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Mono.otf"; path = "GradientWeather/Apercu-Mono.otf"; sourceTree = "<group>"; };
+		2917B13F1ADE568300B1F8E7 /* Apercu-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Regular.otf"; path = "GradientWeather/Apercu-Regular.otf"; sourceTree = "<group>"; };
+		2917B1491ADE569C00B1F8E7 /* National-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-Bold.otf"; path = "GradientWeather/National-Bold.otf"; sourceTree = "<group>"; };
+		2917B14A1ADE569C00B1F8E7 /* National-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-BoldItalic.otf"; path = "GradientWeather/National-BoldItalic.otf"; sourceTree = "<group>"; };
+		2917B14B1ADE569C00B1F8E7 /* National-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-Book.otf"; path = "GradientWeather/National-Book.otf"; sourceTree = "<group>"; };
+		2917B14C1ADE569C00B1F8E7 /* National-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-BookItalic.otf"; path = "GradientWeather/National-BookItalic.otf"; sourceTree = "<group>"; };
+		2917B14D1ADE569C00B1F8E7 /* National-Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-Extrabold.otf"; path = "GradientWeather/National-Extrabold.otf"; sourceTree = "<group>"; };
+		2917B14E1ADE569C00B1F8E7 /* National-ExtraboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-ExtraboldItalic.otf"; path = "GradientWeather/National-ExtraboldItalic.otf"; sourceTree = "<group>"; };
+		2917B14F1ADE569C00B1F8E7 /* National-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-Medium.otf"; path = "GradientWeather/National-Medium.otf"; sourceTree = "<group>"; };
+		2917B1501ADE569C00B1F8E7 /* National-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-MediumItalic.otf"; path = "GradientWeather/National-MediumItalic.otf"; sourceTree = "<group>"; };
+		2917B1511ADE569C00B1F8E7 /* National-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-Regular.otf"; path = "GradientWeather/National-Regular.otf"; sourceTree = "<group>"; };
+		2917B1521ADE569C00B1F8E7 /* National-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-RegularItalic.otf"; path = "GradientWeather/National-RegularItalic.otf"; sourceTree = "<group>"; };
+		2917B1531ADE569C00B1F8E7 /* National-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-Semibold.otf"; path = "GradientWeather/National-Semibold.otf"; sourceTree = "<group>"; };
+		2917B1541ADE569C00B1F8E7 /* National-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "National-SemiboldItalic.otf"; path = "GradientWeather/National-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		2917B1611ADE5FAA00B1F8E7 /* SceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
+		299802041ADE969200390964 /* Gitano.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gitano.mp4; sourceTree = "<group>"; };
 		7702D7041AD1566200956F54 /* Drop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
 		770949681AD852FA00781DC1 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		77344ABD1AD595F9006C5FC9 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
@@ -54,7 +100,7 @@
 		77F2A8F01ACDADBA00C5FC98 /* GradientWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F2A8F41ACDADBA00C5FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77F2A8F51ACDADBA00C5FC98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77F2A8F71ACDADBA00C5FC98 /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
+		77F2A8F71ACDADBA00C5FC98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77F2A8FA1ACDADBA00C5FC98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77F2A8FC1ACDADBA00C5FC98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		77F2A8FF1ACDADBA00C5FC98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -84,6 +130,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2917B1221ADE55FA00B1F8E7 /* National */ = {
+			isa = PBXGroup;
+			children = (
+				2917B1491ADE569C00B1F8E7 /* National-Bold.otf */,
+				2917B14A1ADE569C00B1F8E7 /* National-BoldItalic.otf */,
+				2917B14B1ADE569C00B1F8E7 /* National-Book.otf */,
+				2917B14C1ADE569C00B1F8E7 /* National-BookItalic.otf */,
+				2917B14D1ADE569C00B1F8E7 /* National-Extrabold.otf */,
+				2917B14E1ADE569C00B1F8E7 /* National-ExtraboldItalic.otf */,
+				2917B14F1ADE569C00B1F8E7 /* National-Medium.otf */,
+				2917B1501ADE569C00B1F8E7 /* National-MediumItalic.otf */,
+				2917B1511ADE569C00B1F8E7 /* National-Regular.otf */,
+				2917B1521ADE569C00B1F8E7 /* National-RegularItalic.otf */,
+				2917B1531ADE569C00B1F8E7 /* National-Semibold.otf */,
+				2917B1541ADE569C00B1F8E7 /* National-SemiboldItalic.otf */,
+			);
+			name = National;
+			sourceTree = "<group>";
+		};
+		2917B1351ADE561B00B1F8E7 /* Aperçu */ = {
+			isa = PBXGroup;
+			children = (
+				2917B1371ADE568300B1F8E7 /* Apercu-Bold.otf */,
+				2917B1381ADE568300B1F8E7 /* Apercu-BoldItalic.otf */,
+				2917B1391ADE568300B1F8E7 /* Apercu-Italic.otf */,
+				2917B13A1ADE568300B1F8E7 /* Apercu-Light.otf */,
+				2917B13B1ADE568300B1F8E7 /* Apercu-LightItalic.otf */,
+				2917B13C1ADE568300B1F8E7 /* Apercu-Medium.otf */,
+				2917B13D1ADE568300B1F8E7 /* Apercu-MediumItalic.otf */,
+				2917B13E1ADE568300B1F8E7 /* Apercu-Mono.otf */,
+				2917B13F1ADE568300B1F8E7 /* Apercu-Regular.otf */,
+			);
+			name = "Aperçu";
+			sourceTree = "<group>";
+		};
+		2917B1361ADE562700B1F8E7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2917B1351ADE561B00B1F8E7 /* Aperçu */,
+				2917B1221ADE55FA00B1F8E7 /* National */,
+			);
+			name = Fonts;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		299802031ADE967000390964 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				299802041ADE969200390964 /* Gitano.mp4 */,
+				2917B1361ADE562700B1F8E7 /* Fonts */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		771CDE641AD8395C003B4005 /* Symbols */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +227,8 @@
 		77EE719B1ADE38EE008B2804 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				77F2A8F71ACDADBA00C5FC98 /* SceneViewController.swift */,
+				77F2A8F71ACDADBA00C5FC98 /* ViewController.swift */,
+				2917B1611ADE5FAA00B1F8E7 /* SceneViewController.swift */,
 				77EE719E1ADE39C1008B2804 /* SceneView.swift */,
 				77EE719C1ADE3911008B2804 /* IntroView */,
 				771CDE651AD8396C003B4005 /* IllustrationView */,
@@ -177,6 +278,7 @@
 				77EE719B1ADE38EE008B2804 /* Scene */,
 				771CDE641AD8395C003B4005 /* Symbols */,
 				779D74931AD967CD00982565 /* Libraries */,
+				299802031ADE967000390964 /* Assets */,
 				77F2A8F91ACDADBA00C5FC98 /* Main.storyboard */,
 				77F2A8FC1ACDADBA00C5FC98 /* Images.xcassets */,
 				77F2A8FE1ACDADBA00C5FC98 /* LaunchScreen.xib */,
@@ -291,9 +393,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2917B1431ADE568300B1F8E7 /* Apercu-Light.otf in Resources */,
+				2917B1481ADE568300B1F8E7 /* Apercu-Regular.otf in Resources */,
+				2917B1601ADE569C00B1F8E7 /* National-SemiboldItalic.otf in Resources */,
+				2917B15C1ADE569C00B1F8E7 /* National-MediumItalic.otf in Resources */,
+				2917B1591ADE569C00B1F8E7 /* National-Extrabold.otf in Resources */,
+				2917B1581ADE569C00B1F8E7 /* National-BookItalic.otf in Resources */,
+				2917B1471ADE568300B1F8E7 /* Apercu-Mono.otf in Resources */,
+				2917B1411ADE568300B1F8E7 /* Apercu-BoldItalic.otf in Resources */,
+				2917B1421ADE568300B1F8E7 /* Apercu-Italic.otf in Resources */,
+				2917B15D1ADE569C00B1F8E7 /* National-Regular.otf in Resources */,
+				2917B15B1ADE569C00B1F8E7 /* National-Medium.otf in Resources */,
+				2917B15F1ADE569C00B1F8E7 /* National-Semibold.otf in Resources */,
+				2917B1571ADE569C00B1F8E7 /* National-Book.otf in Resources */,
+				299802051ADE969200390964 /* Gitano.mp4 in Resources */,
 				77F2A8FB1ACDADBA00C5FC98 /* Main.storyboard in Resources */,
+				2917B1441ADE568300B1F8E7 /* Apercu-LightItalic.otf in Resources */,
+				2917B1401ADE568300B1F8E7 /* Apercu-Bold.otf in Resources */,
+				2917B1451ADE568300B1F8E7 /* Apercu-Medium.otf in Resources */,
+				2917B1461ADE568300B1F8E7 /* Apercu-MediumItalic.otf in Resources */,
+				2917B1561ADE569C00B1F8E7 /* National-BoldItalic.otf in Resources */,
 				77F2A9001ACDADBA00C5FC98 /* LaunchScreen.xib in Resources */,
+				2917B15A1ADE569C00B1F8E7 /* National-ExtraboldItalic.otf in Resources */,
 				77F2A8FD1ACDADBA00C5FC98 /* Images.xcassets in Resources */,
+				2917B15E1ADE569C00B1F8E7 /* National-RegularItalic.otf in Resources */,
+				2917B1551ADE569C00B1F8E7 /* National-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,8 +438,9 @@
 				934B6ACE1ACE9EE000939CAB /* Sun.swift in Sources */,
 				779D749E1ADB973600982565 /* Sky.swift in Sources */,
 				779D74921AD9583200982565 /* Wind.swift in Sources */,
+				2917B1621ADE5FAA00B1F8E7 /* SceneViewController.swift in Sources */,
 				77EE719F1ADE39C1008B2804 /* SceneView.swift in Sources */,
-				77F2A8F81ACDADBA00C5FC98 /* SceneViewController.swift in Sources */,
+				77F2A8F81ACDADBA00C5FC98 /* ViewController.swift in Sources */,
 				779D749C1ADB878600982565 /* Snow.swift in Sources */,
 				770949691AD852FA00781DC1 /* Rain.swift in Sources */,
 				77EE719A1ADE38BF008B2804 /* VideoView.swift in Sources */,

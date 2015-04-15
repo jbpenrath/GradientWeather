@@ -9,9 +9,16 @@
 import UIKit
 
 class SceneView:UIView {
-
+    
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
+    
+    internal func setIntroView() {
+        
+        let view:IntroView = IntroView(frame: self.bounds)
+        self.addSubview(view)
+        
     }
     
 }

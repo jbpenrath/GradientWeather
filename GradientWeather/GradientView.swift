@@ -61,8 +61,7 @@ class GradientView: UIView {
             case 21...23:
                 timeGradientProperties = Gradients.dayCycle.Daybreak.getGradientProperties()
                 break
-            default:
-                println("[ERROR] - Hour isn't included in the given interval")
+            default: println("[ERROR] - Hour isn't included in the given interval")
         }
 
         

@@ -36,6 +36,30 @@
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>National-Book.otf</string>
+		<string>National-BookItalic.otf</string>
+		<string>National-Regular.otf</string>
+		<string>National-RegularItalic.otf</string>
+		<string>National-Medium.otf</string>
+		<string>National-MediumItalic.otf</string>
+		<string>National-Semibold.otf</string>
+		<string>National-SemiboldItalic.otf</string>
+		<string>National-Bold.otf</string>
+		<string>National-BoldItalic.otf</string>
+		<string>National-Extrabold.otf</string>
+		<string>National-ExtraboldItalic.otf</string>
+		<string>Apercu.otf</string>
+		<string>Apercu-Italic.otf</string>
+		<string>Apercu-Light.otf</string>
+		<string>Apercu-LightItalic.otf</string>
+		<string>Apercu-Mono.otf</string>
+		<string>Apercu-Medium.otf</string>
+		<string>Apercu-MediumItalic.otf</string>
+		<string>Apercu-Bold.otf</string>
+		<string>Apercu-BoldItalic.otf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

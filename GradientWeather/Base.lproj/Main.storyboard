@@ -7,38 +7,20 @@
         <!--Scene View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="SceneViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="SceneViewController" customModule="GradientWeather" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="SceneView" customModule="GradientWeather" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="SceneView" customModule="GradientWeather">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jr4-wS-GaV" customClass="IntroView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.1868824399" green="0.27606380380000001" blue="0.50963413719999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-gG-flN">
-                                <rect key="frame" x="260" y="270" width="80" height="59"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.93477590460526316" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="jr4-wS-GaV" secondAttribute="width" id="0tk-Xs-jOT"/>
-                            <constraint firstAttribute="height" secondItem="jr4-wS-GaV" secondAttribute="height" id="97w-8v-Vb0"/>
-                            <constraint firstAttribute="centerY" secondItem="jr4-wS-GaV" secondAttribute="centerY" id="aec-fT-l2C"/>
-                            <constraint firstAttribute="centerX" secondItem="jr4-wS-GaV" secondAttribute="centerX" id="eT2-Nb-YNZ"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.0062794303521513939" green="0.049141101539134979" blue="0.12388294190168381" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="474"/>
+            <point key="canvasLocation" x="-104" y="406"/>
         </scene>
     </scenes>
 </document>
