@@ -10,60 +10,43 @@ import UIKit
 
 class IntroView:UIView {
     
-    let NameLabel:UILabel = UILabel()
+    let circle = CAShapeLayer()
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        let bounds = UIScreen.mainScreen().bounds
+    
+        circle.bounds = CGRect(x: 0, y: 0, width: bounds.height, height: bounds.height)
+        circle.position = CGPoint(x: bounds.width/2, y: bounds.height/2)
+        circle.path = UIBezierPath(ovalInRect: circle.bounds).CGPath
+        circle.fillColor = UIColor(red:1, green:0.243, blue:0.337, alpha:1).CGColor
+        circle.zPosition = -1
+        
+        println(circle.frame)
+        println(circle.position)
+        
+        layer.addSublayer(circle)
+        
+    }
+    
+    func launchAnimation() {
+        let animationScale = CABasicAnimation(keyPath: "transform.scale")
+        animationScale.fromValue = 1
+        animationScale.toValue = 40/circle.frame.height
+        animationScale.duration = 1.5
+        animationScale.fillMode = kCAFillModeForwards
+        animationScale.removedOnCompletion = false
+        
+        
+        circle.addAnimation(animationScale, forKey: "circleScalingDown")
+        
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let screenBounds = UIScreen.mainScreen().bounds
-        
-//        self.transform = CGAffineTransformMakeScale(0.3, 0.3)
-
-        println(self.center)
-        
-        let circle = CAShapeLayer()
-        circle.frame = CGRect(x: 0, y: 0, width: self.bounds.height, height: self.bounds.height)
-        circle.path = UIBezierPath(ovalInRect: circle.frame).CGPath
-        circle.fillColor = UIColor(red:0.99, green:0.31, blue:0.32, alpha:1).CGColor
-        layer.addSublayer(circle)
-        
-        let animationScale = CABasicAnimation(keyPath: "transform.scale")
-        animationScale.fromValue = 1
-        animationScale.toValue = 40/circle.frame.height
-        
-        let keepCenter = CABasicAnimation(keyPath: "position")
-        keepCenter.fromValue = NSValue(CGPoint: CGPoint(x: self.bounds.width/2, y: self.bounds.height/2))
-        keepCenter.toValue = NSValue(CGPoint: CGPoint(x: self.bounds.width/2, y: self.bounds.height/2))
-        
-        let group = CAAnimationGroup()
-        group.animations = [animationScale, keepCenter]
-        group.duration = 2
-        group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        group.fillMode = kCAFillModeForwards
-        group.removedOnCompletion = false
-        
-        NameLabel.text = "Pauline"
-        NameLabel.font = UIFont(name: "National-Bold", size: 24)
-        NameLabel.textColor = UIColor(red:0.99, green:0.31, blue:0.32, alpha:1)
-        NameLabel.textAlignment = NSTextAlignment.Center
-        NameLabel.sizeToFit()
-        NameLabel.center = CGPoint(x: self.bounds.width/2, y: 40+self.bounds.height/2)
-        NameLabel.alpha = 0
-        
-        self.addSubview(NameLabel)
-        
-        CATransaction.begin()
-        CATransaction.setCompletionBlock { () -> Void in
-            let videoView:VideoView = VideoView(frame: self.frame)
-            self.addSubview(videoView)
-            println("Prout")
-        }
-        circle.addAnimation(group, forKey: "kiki")
-        CATransaction.commit()
+        println(self.frame)
         
     }
     

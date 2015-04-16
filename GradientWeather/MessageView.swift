@@ -1,5 +1,5 @@
 //
-//  SceneView.swift
+//  MessageView.swift
 //  GradientWeather
 //
 //  Created by Jean-baptiste PENRATH on 15/04/2015.
@@ -8,17 +8,10 @@
 
 import UIKit
 
-class SceneView:UIView {
+class MessageView: UIView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    internal func setIntroView() {
-        
-        let view:IntroView = IntroView(frame: self.bounds)
-        self.addSubview(view)
-        
     }
     
 }

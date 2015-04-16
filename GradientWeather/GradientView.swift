@@ -17,9 +17,8 @@ class GradientView: UIView {
     
     required init(coder aDecoder: NSCoder) {
 
-        weather = YQL.getCurrentWeather("64.143136", longitude: "-21.940309")
-        
-//        var date:NSDate = weather.valueForKeyPath("global.date") as! NSDate
+        weather = aDecoder.decodeObjectForKey("weather") as! NSDictionary
+        println(weather)
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
@@ -68,14 +67,12 @@ class GradientView: UIView {
         let context = UIGraphicsGetCurrentContext()
         var colorSpace = CGColorSpaceCreateDeviceRGB()
         
-        
         var code:Int = (weather.valueForKeyPath("global.code") as! String).toInt()!
         var temperature:Int = (weather.valueForKeyPath("global.temp") as! String).toInt()!
         
         var temperatureScale:Gradients.temperatureScale!
         
         //TODO: Readapt with dictionary
-        
         switch code {
             case 0...7,10,12,16...20,35,41,43,45,46:
                 if temperature < 0 { temperatureScale = Gradients.temperatureScale.Freezing_Rainy }
@@ -89,14 +86,14 @@ class GradientView: UIView {
                 else if temperature <= 10 { temperatureScale = Gradients.temperatureScale.Cold_CloudyRainy }
                 else if temperature <= 20 { temperatureScale = Gradients.temperatureScale.Mild_CloudyRainy }
                 else if temperature <= 30 { temperatureScale = Gradients.temperatureScale.Warm_CloudyRainy }
-                else { temperatureScale = Gradients.temperatureScale.Scorching_Rainy }
+                else { temperatureScale = Gradients.temperatureScale.Scorching_CloudyRainy }
                 break
             case 23...26:
                 if temperature < 0 { temperatureScale = Gradients.temperatureScale.Freezing_Cloudy }
                 else if temperature <= 10 { temperatureScale = Gradients.temperatureScale.Cold_Cloudy }
                 else if temperature <= 20 { temperatureScale = Gradients.temperatureScale.Mild_Cloudy }
                 else if temperature <= 30 { temperatureScale = Gradients.temperatureScale.Warm_Cloudy }
-                else { temperatureScale = Gradients.temperatureScale.Scorching_Rainy }
+                else { temperatureScale = Gradients.temperatureScale.Scorching_Cloudy }
                 break
             case 27...30, 44:
                 if temperature < 0 { temperatureScale = Gradients.temperatureScale.Freezing_SunnyCloudy }
@@ -117,6 +114,8 @@ class GradientView: UIView {
                 break
         }
         
+        temperatureScale = Gradients.temperatureScale.Scorching_Sunny
+        
         var weatherGradientProperties = temperatureScale.getGradientProperties(hour)
         var gradient = CGGradientCreateWithColors(colorSpace, weatherGradientProperties.colors, weatherGradientProperties.locations)
         let options:CGGradientDrawingOptions = UInt32(kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation)
@@ -127,12 +126,12 @@ class GradientView: UIView {
         
     }
     
+    //MARK: Private methods
     private func getHours(date:NSDate)->Int {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitHour, fromDate: date)
         
         return components.hour
-        
     }
     
 }

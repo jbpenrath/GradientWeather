@@ -26,47 +26,59 @@ class Gradients {
             switch self {
                 case .Night:
                     println("[DEBUG] - Night")
-                    colors = [UIColor(red:0.01, green:0.05, blue:0.12, alpha:0.9).CGColor, UIColor(red:0.01, green:0.05, blue:0.12, alpha:1.0).CGColor]
+                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.7).CGColor]
                     startPoint = CGPoint(x: 0.0, y: CGRectGetHeight(boundsScreen))
                     endPoint = CGPoint(x: CGRectGetWidth(boundsScreen), y: 0.0)
                     break
                 case FirstLight:
                     println("[DEBUG] - FirstLight")
-                    colors = [UIColor(red:0.01, green:0.05, blue:0.12, alpha:1.0).CGColor, UIColor(red:0.01, green:0.05, blue:0.12, alpha:0.7).CGColor]
+//                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.01, green:0.05, blue:0.12, alpha:0.7).CGColor]
+                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.94).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.75).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.7).CGColor]
+                    locations = [0, 0.1, 0.45, 0.91]
                     startPoint = CGPoint(x: CGRectGetWidth(boundsScreen)/2, y: CGRectGetHeight(boundsScreen))
                     endPoint = CGPoint(x: CGRectGetWidth(boundsScreen)/2, y: 0.0)
                     break
                 case Sunrise:
                     println("[DEBUG] - Sunrise")
-                    colors = [UIColor(red:0.01, green:0.05, blue:0.12, alpha:1.0).CGColor, UIColor(white: 1.0, alpha: 0).CGColor]
-                    locations = [0.075, 1.0]
+//                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(white: 1.0, alpha: 0).CGColor]
+//                    locations = [0.075, 1.0]
+                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.161, green:0.2, blue:0.255, alpha:0.95).CGColor, UIColor(red:0.275, green:0.31, blue:0.357, alpha:0.81).CGColor, UIColor(red:0.439, green:0.467, blue:0.502, alpha:0.5).CGColor, UIColor(white: 1.0, alpha: 0.3).CGColor]
+                    locations = [0, 0.27, 0.5, 0.68, 0.93]
                     startPoint = CGPoint(x: CGRectGetWidth(boundsScreen)/2, y: CGRectGetHeight(boundsScreen))
                     endPoint = CGPoint(x: CGRectGetWidth(boundsScreen)/2, y: 0.0)
                     break
                 case Morning:
                     println("[DEBUG] - Morning")
-                    colors = [UIColor(red:0.26, green:0.29, blue:0.35, alpha:1.0).CGColor, UIColor(white: 1.0, alpha: 0.0).CGColor]
+//                    colors = [UIColor(red:0.26, green:0.29, blue:0.35, alpha:1.0).CGColor, UIColor(white: 1.0, alpha: 0.0).CGColor]
+                    colors = [UIColor(red:0.031, green:0.075, blue:0.137, alpha:0.98).CGColor, UIColor(red:0.678, green:0.69, blue:0.714, alpha:0.53).CGColor, UIColor(white: 1.0, alpha: 0.3).CGColor]
+                    locations = [0, 0.48, 1]
                     startPoint = CGPoint(x: CGRectGetWidth(boundsScreen)/2, y: CGRectGetHeight(boundsScreen))
                     endPoint = CGPoint(x: CGRectGetWidth(boundsScreen)/2, y: 0.0)
                     break
                 case Day:
                     println("[DEBUG] - Day")
-                    colors = [UIColor(white: 1.0, alpha: 0.4).CGColor, UIColor(white: 1.0, alpha:0.0).CGColor]
+                    colors = [UIColor(white: 1.0, alpha: 0.3).CGColor, UIColor(white: 1.0, alpha:0.0).CGColor]
                     startPoint = CGPoint(x: CGRectGetWidth(boundsScreen), y: 0.0)
                     endPoint = CGPoint(x: 0.0, y: CGRectGetHeight(boundsScreen))
                     break
                 case Twilight:
                     println("[DEBUG] - Twilight")
-                    colors = [UIColor(red:0.25, green:0.28, blue:0.33, alpha:1.0).CGColor, UIColor(white: 1.0, alpha:0.0).CGColor]
+//                    colors = [UIColor(red:0.25, green:0.28, blue:0.33, alpha:1.0).CGColor, UIColor(white: 1.0, alpha:0.0).CGColor]
+                    colors = [UIColor(red:0.031, green:0.075, blue:0.137, alpha:0.98).CGColor, UIColor(red:0.678, green:0.69, blue:0.714, alpha:0.53).CGColor, UIColor(white: 1.0, alpha: 0.3).CGColor]
+                    locations = [0, 0.48, 1]
                     break
                 case BlueHour:
                     println("[DEBUG] - BlueHour")
-                    colors = [UIColor(red:0.01, green:0.05, blue:0.12, alpha:1.0).CGColor, UIColor(white: 1.0, alpha:0.0).CGColor]
-                    locations = [0.075, 1.0]
+//                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(white: 1.0, alpha:0.0).CGColor]
+//                    locations = [0.075, 1.0]
+                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.161, green:0.2, blue:0.255, alpha:0.95).CGColor, UIColor(red:0.275, green:0.31, blue:0.357, alpha:0.81).CGColor, UIColor(red:0.439, green:0.467, blue:0.502, alpha:0.5).CGColor, UIColor(white: 1.0, alpha: 0.3).CGColor]
+                    locations = [0, 0.27, 0.5, 0.68, 0.93]
                     break
                 case Daybreak:
                     println("[DEBUG] - Daybreak")
-                    colors = [UIColor(red:0.01, green:0.05, blue:0.12, alpha:1.0).CGColor, UIColor(red:0.01, green:0.05, blue:0.12, alpha:0.7).CGColor]
+//                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.7).CGColor]
+                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.94).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.75).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.7).CGColor]
+                    locations = [0, 0.1, 0.45, 0.91]
                     break
                 default:
                     println("[ERROR] - No case for this value")
