@@ -31,6 +31,7 @@ class IntroViewController:UIViewController, CLLocationManagerDelegate {
         
         self.view.layer.bounds = CGRect(origin: self.view.bounds.origin, size: size)
         
+        println(self.view.frame)
         introView = IntroView(frame: self.view.frame)
         introView.readyButton.addTarget(self, action: "readyToRead", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(introView)

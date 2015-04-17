@@ -21,22 +21,21 @@ class Cloud:CALayer {
         super.init();
         
         self.frame = frame
-        self.backgroundColor = UIColor.redColor().CGColor
+        cloud.position.x = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
         
-        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        cloud.position.x = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
         
         if Int(0.5+Float(arc4random()) / Float(UINT32_MAX)) == Int(0) {
             direction = false
-//            cloud.position.x -= self.frame.width
+            cloud.position.x -= self.frame.width
         }
         else {
             direction = true
-//            cloud.position.x += self.frame.width
+            cloud.position.x += self.frame.width
         }
         
         setGradients()
         setMask()
+        setAnimation()
     }
     
     func setGradients() {
@@ -93,7 +92,7 @@ class Cloud:CALayer {
         
     }
     
-    func animate() {
+    func setAnimation() {
         let horizontalMovement = CABasicAnimation(keyPath: "position.x")
         horizontalMovement.fromValue = 0
         horizontalMovement.toValue = 100
@@ -101,8 +100,7 @@ class Cloud:CALayer {
         if (direction==true) { horizontalMovement.toValue = self.frame.width }
         else { horizontalMovement.toValue = 0 }
         
-//        horizontalMovement.duration = CFTimeInterval(20 + 20 * Float(arc4random()) / Float(UINT32_MAX))
-        horizontalMovement.duration = 1
+        horizontalMovement.duration = CFTimeInterval(20 + 20 * Float(arc4random()) / Float(UINT32_MAX))
         horizontalMovement.autoreverses = true
         horizontalMovement.repeatCount = Float.infinity
         

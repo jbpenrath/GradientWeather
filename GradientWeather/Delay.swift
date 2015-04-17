@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+extension NSObject {
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(

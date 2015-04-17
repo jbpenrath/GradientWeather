@@ -16,16 +16,19 @@ class Drop: CAGradientLayer {
     var masterAnimation:CAAnimationGroup!
     var distance:CGFloat = 0.0
     var heightOfSuperLayer:CGFloat = 0.0
-    let velocity:CGFloat = 8/1000
+    let velocity:CGFloat = 5/1000
     
     init(frame: CGRect) {
         super.init();
         
-        self.frame = frame
+        self.bounds = frame
         self.heightOfSuperLayer = self.frame.height
         
         self.bounds.size = CGSize(width: frame.width, height: CGFloat(175+arc4random_uniform(100)))
-//        self.position.y = -(self.bounds.height + CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer))))
+        self.needsLayout()
+        self.layoutIfNeeded()
+        self.position.y = -(self.bounds.height + CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer))))
+        self.anchorPoint = CGPoint(x: 0.5, y: 1)
         setGradient()
         setAnimation()
     }

@@ -15,7 +15,7 @@ class Sun: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.frame = frame
+        self.layer.bounds = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         setMask()
         setGradientBackground()
     }

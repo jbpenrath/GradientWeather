@@ -182,7 +182,11 @@ class GradientView: UIView {
     
     override func drawRect(rect: CGRect) {
         
-        let hour:Int = getHours(NSDate())
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = ""
+        
+//        let hour:Int = getHours(NSDate())
+        let hour:Int = 19
         
         switch hour {
             case 0..<4:
@@ -223,7 +227,7 @@ class GradientView: UIView {
         
         //TODO: Readapt with dictionary
         switch code {
-            case 0...7,10,12,16...20,35,41,43,45,46:
+            case 0...7,10...12,16...20,35,41,43,45,46:
                 if temperature < 0 { temperatureScale = Gradients.temperatureScale.Freezing_Rainy }
                 else if temperature <= 10 { temperatureScale = Gradients.temperatureScale.Cold_Rainy }
                 else if temperature <= 20 { temperatureScale = Gradients.temperatureScale.Mild_Rainy }

@@ -20,6 +20,10 @@ class MessageViewController: UIViewController {
         self.view.layer.bounds = CGRect(origin: self.view.bounds.origin, size: size)
         
         createGradientBackgroundView()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         createSymbolView()
     }
     

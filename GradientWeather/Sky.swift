@@ -10,8 +10,6 @@ import UIKit
 
 class Sky:CALayer {
     
-    var clouds:[Cloud] = []
-    
     init(frame: CGRect) {
         super.init()
         
@@ -21,14 +19,14 @@ class Sky:CALayer {
         
         // Rain
         for(var i:CGFloat = 0; i < numberOfCloud; i++) {
-            let cloud = Cloud(frame: CGRect(x: 0, y: i*self.frame.height/numberOfCloud + CGFloat(arc4random_uniform(20)), width: self.frame.width, height: 90))
+            let cloud = Cloud(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 90))
+            cloud.position.y = i*self.frame.height/numberOfCloud + CGFloat(arc4random_uniform(20))
 //            self.view.layer.addSublayer(cloud)
 //            let cloud = Cloud(frame: CGRect(x: CGFloat(i)*self.frame.width/CGFloat(numberOfCloud) + CGFloat(arc4random_uniform(10)), y: 0, width: CGFloat(5+arc4random_uniform(10)), height: self.frame.height))
             
-//            scale = CGFloat(0.5 + 0.5 * Float(arc4random()) / Float(UINT32_MAX))
-//            cloud.transform = CATransform3DMakeScale(scale, scale, 0)
+            scale = CGFloat(0.5 + 0.5 * Float(arc4random()) / Float(UINT32_MAX))
+            cloud.transform = CATransform3DMakeScale(scale, scale, 0)
             self.addSublayer(cloud)
-            clouds.append(cloud)
         }
         
     }
