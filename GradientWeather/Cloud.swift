@@ -9,6 +9,7 @@
 import UIKit
 
 class Cloud:CALayer {
+    var cloud = CALayer()
     var circle1 = CAGradientLayer()
     var circle2 = CAGradientLayer()
     var circle3 = CAGradientLayer()
@@ -20,17 +21,22 @@ class Cloud:CALayer {
         super.init();
         
         self.frame = frame
+        self.backgroundColor = UIColor.redColor().CGColor
+        
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.position.x = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
+//        cloud.position.x = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
         
-        self.opacity = 0.75
+        if Int(0.5+Float(arc4random()) / Float(UINT32_MAX)) == Int(0) {
+            direction = false
+//            cloud.position.x -= self.frame.width
+        }
+        else {
+            direction = true
+//            cloud.position.x += self.frame.width
+        }
         
-        if Int(0.5+Float(arc4random()) / Float(UINT32_MAX)) == Int(0) { direction = false }
-        else { direction = true }
-        
-            setGradients()
+        setGradients()
         setMask()
-        setAnimation()
     }
     
     func setGradients() {
@@ -51,6 +57,7 @@ class Cloud:CALayer {
         circle1.mask = circle1MaskLayer
         circle1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         circle1.colors = colors
+        circle1.opacity = 0.85
     
         // Circle2 - Middle
         circle2.frame = CGRect(x: 45, y: 15, width: circleDiameter, height: circleDiameter)
@@ -58,16 +65,22 @@ class Cloud:CALayer {
         circle2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         circle2.colors = colors
         circle2.transform = CATransform3DMakeScale(1.5, 1.5, 0)
+        circle2.opacity = 0.9
         
         // Circle3 - Right
         circle3.frame = CGRect(x: 90, y: 15, width: circleDiameter, height: circleDiameter)
         circle3.mask = circle3MaskLayer
         circle3.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         circle3.colors = colors
+        circle1.opacity = 0.85
         
-        self.insertSublayer(circle1, atIndex: 0)
-        self.insertSublayer(circle2, below: circle1)
-        self.insertSublayer(circle3, atIndex: 0)
+        cloud.insertSublayer(circle1, atIndex: 0)
+        cloud.insertSublayer(circle2, below: circle1)
+        cloud.insertSublayer(circle3, atIndex: 0)
+        
+        cloud.opacity = 0.9
+        
+        self.addSublayer(cloud)
         
     }
     
@@ -80,18 +93,20 @@ class Cloud:CALayer {
         
     }
     
-    func setAnimation() {
+    func animate() {
         let horizontalMovement = CABasicAnimation(keyPath: "position.x")
-        horizontalMovement.toValue = self.frame.width
+        horizontalMovement.fromValue = 0
+        horizontalMovement.toValue = 100
         
         if (direction==true) { horizontalMovement.toValue = self.frame.width }
         else { horizontalMovement.toValue = 0 }
         
-        horizontalMovement.duration = CFTimeInterval(20 + 20 * Float(arc4random()) / Float(UINT32_MAX))
+//        horizontalMovement.duration = CFTimeInterval(20 + 20 * Float(arc4random()) / Float(UINT32_MAX))
+        horizontalMovement.duration = 1
         horizontalMovement.autoreverses = true
         horizontalMovement.repeatCount = Float.infinity
         
-        self.addAnimation(horizontalMovement, forKey:"Move")
+        cloud.addAnimation(horizontalMovement, forKey:"Move")
         
     }
     

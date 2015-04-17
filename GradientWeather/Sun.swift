@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Sun: UIView, UIGestureRecognizerDelegate {
+class Sun: UIView {
     
     
     let gradientBackground = CAGradientLayer()
@@ -16,10 +16,8 @@ class Sun: UIView, UIGestureRecognizerDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.frame = frame
-        self.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         setMask()
         setGradientBackground()
-        setGestureRecognizer()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -38,17 +36,6 @@ class Sun: UIView, UIGestureRecognizerDelegate {
         gradientBackground.colors = [UIColor(white: 1, alpha: 0).CGColor, UIColor.whiteColor().CGColor]
         gradientBackground.frame = self.frame
         self.layer.addSublayer(gradientBackground);
-    }
-    
-    private func setGestureRecognizer() {
-        let gesture = UITapGestureRecognizer(target: self, action: Selector("displayWeather"))
-        gesture.delegate = self
-        self.addGestureRecognizer(gesture)
-        
-    }
-    
-    func displayWeather() -> Void {
-        
     }
     
 }

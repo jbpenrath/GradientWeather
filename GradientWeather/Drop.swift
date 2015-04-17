@@ -22,14 +22,15 @@ class Drop: CAGradientLayer {
         super.init();
         
         self.frame = frame
-        self.heightOfSuperLayer = frame.height
+        self.heightOfSuperLayer = self.frame.height
+        
         self.bounds.size = CGSize(width: frame.width, height: CGFloat(175+arc4random_uniform(100)))
-        self.position.y = -(self.bounds.height + CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer))))
+//        self.position.y = -(self.bounds.height + CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer))))
         setGradient()
         setAnimation()
     }
     
-    override init!(layer: AnyObject!) {
+    override init(layer: AnyObject!) {
         super.init(layer: layer)
     }
     

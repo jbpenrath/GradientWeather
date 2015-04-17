@@ -26,7 +26,7 @@ class Gradients {
             switch self {
                 case .Night:
                     println("[DEBUG] - Night")
-                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.7).CGColor]
+                    colors = [UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor, UIColor(red:0.008, green:0.059, blue:0.114, alpha:0.85).CGColor]
                     startPoint = CGPoint(x: 0.0, y: CGRectGetHeight(boundsScreen))
                     endPoint = CGPoint(x: CGRectGetWidth(boundsScreen), y: 0.0)
                     break

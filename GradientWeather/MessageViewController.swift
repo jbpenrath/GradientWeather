@@ -7,51 +7,36 @@
 //
 
 import UIKit
-import CoreLocation
 
-class MessageViewController: UIViewController, CLLocationManagerDelegate {
+class MessageViewController: UIViewController {
     
-    var locationManager:CLLocationManager!
-    var currentLocation:CLLocation!
     var weather:NSDictionary!
+    var size:CGSize!
+    var origin:CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        launchLocalization()
+        self.view.layer.bounds = CGRect(origin: self.view.bounds.origin, size: size)
         
-        println(weather)
-        
-    }
-    
-    //MARK: Settings Methods
-    func launchLocalization() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    //MARK: CLLocationManager - Delegation Methods
-    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        
-        let latitude:String = String(stringInterpolationSegment: newLocation.coordinate.latitude)
-        let longitude:String = String(stringInterpolationSegment: newLocation.coordinate.longitude)
-        
-        weather = YQL.getCurrentWeather(latitude, longitude: longitude)
-        
-        if weather != nil {
-            locationManager.stopUpdatingLocation()
-            addGradientBackgroundView()
-        }
-        
+        createGradientBackgroundView()
+        createSymbolView()
     }
     
     //MARK: Private methods
-    func addGradientBackgroundView() {
+    func createGradientBackgroundView() {
         
-//        let gradientBackgroundView = GradientView(coder: NSKeyedArchiver())
+        let gradientView = GradientView(frame: self.view.frame, weather: weather)
+        self.view.addSubview(gradientView)
+        delay(2, closure: { () -> () in
+            gradientView.animate()
+        })
         
+    }
+    
+    func createSymbolView() {
+        let symbolView = SymbolView(frame: self.view.frame, weather: weather)
+        self.view.addSubview(symbolView)
     }
     
     //MARK: Bullshit methods

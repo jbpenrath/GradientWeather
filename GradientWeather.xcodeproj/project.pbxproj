@@ -38,11 +38,12 @@
 		779D74921AD9583200982565 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D74911AD9583200982565 /* Wind.swift */; };
 		779D749C1ADB878600982565 /* Snow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D749B1ADB878600982565 /* Snow.swift */; };
 		779D749E1ADB973600982565 /* Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D749D1ADB973600982565 /* Sky.swift */; };
+		77AEE00D1AE062AD00F972E1 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AEE00C1AE062AD00F972E1 /* Delay.swift */; };
+		77AEE00F1AE0B9B700F972E1 /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AEE00E1AE0B9B700F972E1 /* SymbolView.swift */; };
 		77EE71981ADE38B2008B2804 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE71971ADE38B2008B2804 /* IntroView.swift */; };
 		77EE719A1ADE38BF008B2804 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE71991ADE38BF008B2804 /* VideoView.swift */; };
 		77EE71A11ADEF6A8008B2804 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE71A01ADEF6A8008B2804 /* IntroViewController.swift */; };
 		77EE71A31ADEF95C008B2804 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE71A21ADEF95C008B2804 /* MessageViewController.swift */; };
-		77EE71A51ADF07EA008B2804 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE71A41ADF07EA008B2804 /* MessageView.swift */; };
 		77F2A8F61ACDADBA00C5FC98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2A8F51ACDADBA00C5FC98 /* AppDelegate.swift */; };
 		77F2A8F81ACDADBA00C5FC98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2A8F71ACDADBA00C5FC98 /* ViewController.swift */; };
 		77F2A8FB1ACDADBA00C5FC98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F2A8F91ACDADBA00C5FC98 /* Main.storyboard */; };
@@ -96,11 +97,12 @@
 		779D74911AD9583200982565 /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
 		779D749B1ADB878600982565 /* Snow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snow.swift; sourceTree = "<group>"; };
 		779D749D1ADB973600982565 /* Sky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sky.swift; sourceTree = "<group>"; };
+		77AEE00C1AE062AD00F972E1 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		77AEE00E1AE0B9B700F972E1 /* SymbolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
 		77EE71971ADE38B2008B2804 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		77EE71991ADE38BF008B2804 /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		77EE71A01ADEF6A8008B2804 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		77EE71A21ADEF95C008B2804 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		77EE71A41ADF07EA008B2804 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		77F2A8F01ACDADBA00C5FC98 /* GradientWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F2A8F41ACDADBA00C5FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77F2A8F51ACDADBA00C5FC98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -209,7 +211,7 @@
 				77EE71A21ADEF95C008B2804 /* MessageViewController.swift */,
 				934B6ACF1ACEC16700939CAB /* GradientView.swift */,
 				77F2A9171ACDCC6800C5FC98 /* Gradients.swift */,
-				77EE71A41ADF07EA008B2804 /* MessageView.swift */,
+				77AEE00E1AE0B9B700F972E1 /* SymbolView.swift */,
 				77EE71991ADE38BF008B2804 /* VideoView.swift */,
 			);
 			name = MessageView;
@@ -218,6 +220,7 @@
 		779D74931AD967CD00982565 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				77AEE00C1AE062AD00F972E1 /* Delay.swift */,
 				779D74941AD967D400982565 /* Yahoo!Weather */,
 			);
 			name = Libraries;
@@ -442,13 +445,14 @@
 				770949691AD852FA00781DC1 /* Rain.swift in Sources */,
 				77EE719A1ADE38BF008B2804 /* VideoView.swift in Sources */,
 				77EE71A11ADEF6A8008B2804 /* IntroViewController.swift in Sources */,
+				77AEE00D1AE062AD00F972E1 /* Delay.swift in Sources */,
 				934B6AD01ACEC16700939CAB /* GradientView.swift in Sources */,
 				77EE71A31ADEF95C008B2804 /* MessageViewController.swift in Sources */,
-				77EE71A51ADF07EA008B2804 /* MessageView.swift in Sources */,
 				77EE71981ADE38B2008B2804 /* IntroView.swift in Sources */,
 				7702D7051AD1566200956F54 /* Drop.swift in Sources */,
 				779D74901AD92BD000982565 /* SnowFlake.swift in Sources */,
 				77344ABE1AD595F9006C5FC9 /* Cloud.swift in Sources */,
+				77AEE00F1AE0B9B700F972E1 /* SymbolView.swift in Sources */,
 				290EB5251ADD1B02002E9ECB /* YQL.swift in Sources */,
 				77F2A8F61ACDADBA00C5FC98 /* AppDelegate.swift in Sources */,
 				77F2A9181ACDCC6800C5FC98 /* Gradients.swift in Sources */,

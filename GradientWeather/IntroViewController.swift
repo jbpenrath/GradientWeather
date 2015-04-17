@@ -7,44 +7,80 @@
 //
 
 import UIKit
+import CoreLocation
 
-class IntroViewController:UIViewController {
+class IntroViewController:UIViewController, CLLocationManagerDelegate {
     
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var introView: IntroView!
-    @IBOutlet var readyButton: UIButton!
-    @IBOutlet var instructionLabel: UILabel!
+    var locationManager:CLLocationManager!
+    var currentLocation:CLLocation!
+    var introView:IntroView!
+    var videoView:VideoView!
+    var size:CGSize!
+    var origin:CGPoint!
+    var weather:NSDictionary!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-              
-        nameLabel.text = "Kristophert"
-        nameLabel.sizeToFit()
         
-        instructionLabel.font = UIFont(name: "Apercu-Medium", size: 40)
+        launchLocalization()
         
-        let strokeButton = CAShapeLayer()
-        strokeButton.path = UIBezierPath(rect: CGRect(x: -5, y: 0, width: readyButton.bounds.width+10, height: readyButton.bounds.height)).CGPath
-        strokeButton.strokeColor = UIColor(red:0.008, green:0.059, blue:0.114, alpha:1).CGColor
-        strokeButton.lineWidth = 3
-        strokeButton.fillColor = UIColor.clearColor().CGColor
+        let numberOfDevices:CGFloat = 1
         
-        readyButton.layer.addSublayer(strokeButton)
-        readyButton.addTarget(self, action: "readyToRead", forControlEvents: UIControlEvents.TouchUpInside)
+        size = CGSize(width: self.view.frame.width * numberOfDevices, height: self.view.frame.height)
+        origin = CGPoint(x: self.view.frame.origin.x, y: self.view.frame.origin.y)
+        
+        self.view.layer.bounds = CGRect(origin: self.view.bounds.origin, size: size)
+        
+        introView = IntroView(frame: self.view.frame)
+        introView.readyButton.addTarget(self, action: "readyToRead", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(introView)
         
     }
     
     func readyToRead() {
-        UIView.animateWithDuration(1, animations: { () -> Void in
-            self.instructionLabel.alpha = 0
-            self.readyButton.alpha = 0
-        }) { (finished) -> Void in
-            if(finished) {
-                self.instructionLabel.removeFromSuperview()
-                self.readyButton.removeFromSuperview()
-                self.introView.launchAnimation()
-            }
+        UIView.animateWithDuration(0.75, animations: { () -> Void in
+            self.introView.interactionLabel.alpha = 0
+            self.introView.readyButton.alpha = 0
+            }) { (finished) -> Void in
+                if(finished) {
+                    self.introView.interactionLabel.removeFromSuperview()
+                    self.introView.readyButton.removeFromSuperview()
+                    self.introView.launchAnimation()
+                    self.delay(1.6) {
+                        self.performSegueWithIdentifier("popToMessageViewController", sender: self)
+                    }
+                }
         }
+    }
+    
+    func launchLocalization() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier! == "popToMessageViewController" {
+            let destinationController:MessageViewController = segue.destinationViewController as! MessageViewController
+            destinationController.size = size
+            destinationController.origin = origin
+            destinationController.weather = weather
+        }
+    }
+    
+    //MARK: CLLocationManager - Delegation Methods
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
+        
+        let latitude:String = String(stringInterpolationSegment: newLocation.coordinate.latitude)
+        let longitude:String = String(stringInterpolationSegment: newLocation.coordinate.longitude)
+        
+        weather = YQL.getCurrentWeather(latitude, longitude: longitude)
+        
+        if weather != nil {
+            locationManager.stopUpdatingLocation()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() { super.didReceiveMemoryWarning() }

@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3e7-fi-c6y">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Apercu-Bold.otf">
-            <string>Apercu-Bold</string>
-        </mutableArray>
-        <mutableArray key="Apercu-Medium.otf">
-            <string>Apercu-Medium</string>
-        </mutableArray>
-        <mutableArray key="National-Bold.otf">
-            <string>National-Bold</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--Scene View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -60,55 +49,10 @@
                     <view key="view" contentMode="scaleToFill" id="ApR-Vu-KNX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pauline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALJ-iP-bPw">
-                                <rect key="frame" x="263" y="326" width="75" height="28"/>
-                                <fontDescription key="fontDescription" name="National-Bold" family="National" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.24313725490196078" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfW-1r-IMH" customClass="IntroView" customModule="GradientWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place your device" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnA-jn-3lY">
-                                        <rect key="frame" x="62" y="275" width="476" height="72"/>
-                                        <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="60"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWF-rR-aSj">
-                                        <rect key="frame" x="268" y="524" width="66" height="36"/>
-                                        <fontDescription key="fontDescription" name="Apercu-Bold" family="Apercu" pointSize="20"/>
-                                        <state key="normal" title="Ready?">
-                                            <color key="titleColor" red="0.0039215686274509803" green="0.031372549019607843" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="cnA-jn-3lY" secondAttribute="centerX" id="MHa-mn-3kk"/>
-                                    <constraint firstAttribute="centerX" secondItem="FWF-rR-aSj" secondAttribute="centerX" id="TTR-t6-Prq"/>
-                                    <constraint firstAttribute="bottom" secondItem="FWF-rR-aSj" secondAttribute="bottom" constant="40" id="sf1-Gd-eWt"/>
-                                    <constraint firstAttribute="centerY" secondItem="cnA-jn-3lY" secondAttribute="centerY" constant="-10.5" id="zQb-eC-fZF"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0078431372549019607" green="0.050980392156862744" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="VfW-1r-IMH" firstAttribute="bottom" secondItem="fv3-kF-MCn" secondAttribute="top" id="0Y2-CX-AW8"/>
-                            <constraint firstAttribute="centerX" secondItem="ALJ-iP-bPw" secondAttribute="centerX" id="Ehk-Qt-Lgm"/>
-                            <constraint firstAttribute="centerY" secondItem="ALJ-iP-bPw" secondAttribute="centerY" constant="-40" id="OMb-kc-d3M"/>
-                            <constraint firstAttribute="width" secondItem="VfW-1r-IMH" secondAttribute="width" id="Zcc-Ns-dFN"/>
-                            <constraint firstAttribute="centerX" secondItem="VfW-1r-IMH" secondAttribute="centerX" id="m65-wJ-iQ4"/>
-                            <constraint firstAttribute="height" secondItem="VfW-1r-IMH" secondAttribute="height" id="tXT-j2-2Yi"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="instructionLabel" destination="cnA-jn-3lY" id="ATs-Y9-jdR"/>
-                        <outlet property="introView" destination="VfW-1r-IMH" id="cIf-YJ-ADh"/>
-                        <outlet property="nameLabel" destination="ALJ-iP-bPw" id="xzm-Xz-BNl"/>
-                        <outlet property="readyButton" destination="FWF-rR-aSj" id="aRF-rL-0SV"/>
-                        <segue destination="zxv-mk-kRM" kind="show" identifier="popToMessageViewController" id="5jf-cJ-k3q"/>
+                        <segue destination="zxv-mk-kRM" kind="presentation" identifier="popToMessageViewController" modalTransitionStyle="crossDissolve" id="5jf-cJ-k3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmZ-mx-Xy5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,7 +67,7 @@
                         <viewControllerLayoutGuide type="top" id="qqT-Qg-rIb"/>
                         <viewControllerLayoutGuide type="bottom" id="39u-fE-9FU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IGp-oy-jcU" customClass="MessageView">
+                    <view key="view" contentMode="scaleToFill" id="IGp-oy-jcU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,24 +76,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VD0-3R-MiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1708" y="-12"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="V8N-ju-5dU">
-            <objects>
-                <viewController id="2mG-Xi-3kS" customClass="ViewController" customModule="GradientWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GIv-jD-iow"/>
-                        <viewControllerLayoutGuide type="bottom" id="iUJ-rH-71B"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sr1-cA-O5m" customClass="GradientView" customModule="GradientWeather" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.35631681743421051" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wfI-yQ-clY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-72" y="781"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
