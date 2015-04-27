@@ -12,6 +12,8 @@ import UIKit
 
 class GradientView: UIView {
     
+    typealias CSTweenTimingFunction = (CGFloat, CGFloat, CGFloat, CGFloat)->CGFloat
+    
     var weather:NSDictionary?
     var timeGradientProperties:(colors:[CGColor]!, locations:[CGFloat]!, startPoint:CGPoint!, endPoint:CGPoint!)!
     let pictoLocationView:UIImageView! = UIImageView()
@@ -90,7 +92,8 @@ class GradientView: UIView {
         dateLabel.textColor = locationLabel.textColor
         dateLabel.textAlignment = locationLabel.textAlignment
         dateLabel.alpha = 0
-        dateLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        dateLabel.transform = CGAffineTransformMakeTranslation(-50, 0)
+//        dateLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
         
         self.addSubview(receivedLabel)
         self.addSubview(dateLabel)
@@ -151,12 +154,28 @@ class GradientView: UIView {
     
     func animate() {
         
-        UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+        var number:CSTweenTimingFunction = CSTweenEaseOutExpo
+        let from:CGFloat = 0
+        let to:CGFloat = 1
+        let duration:CGFloat = 1
+        
+        CSTween.tweenFrom(from, to: to, duration: duration, timingFunction: number, updateBlock: { (operation:CSTweenOperation) -> Void in
+            
+            }) {nil}
+        
+        CSTween.tweenFrom(CGFloat(0.0), to: CGFloat(1.0), duration: CGFloat(0.0), timingFunction: number, updateBlock: { (operation:CSTweenOperation!) -> Void in
             self.pictoLocationView.transform = CGAffineTransformMakeScale(3, 3)
             self.pictoLocationView.alpha = 0
-        }) { (finished) -> Void in
-            if finished {}
+            }) { (finished:Bool) -> Void in
+            
         }
+        
+//        UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+//            self.pictoLocationView.transform = CGAffineTransformMakeScale(3, 3)
+//            self.pictoLocationView.alpha = 0
+//        }) { (finished) -> Void in
+//            if finished {}
+//        }
         
         UIView.animateWithDuration(0.6, delay: 0.2, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             self.fromLabel.transform = CGAffineTransformMakeScale(3, 3)
@@ -186,8 +205,9 @@ class GradientView: UIView {
                 if finished {}
         }
         
-        UIView.animateWithDuration(0.4, delay: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            self.dateLabel.transform = CGAffineTransformMakeScale(1, 1)
+        UIView.animateWithDuration(1.0, delay: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+//            self.dateLabel.transform = CGAffineTransformMakeScale(1, 1)
+            self.dateLabel.transform = CGAffineTransformMakeTranslation(0, 0)
             self.dateLabel.alpha = 1
             }) { (finished) -> Void in
                 if finished {}
