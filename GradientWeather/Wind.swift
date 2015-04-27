@@ -8,20 +8,19 @@
 
 import UIKit
 
-class Wind:CALayer {
+class Wind:UIView {
     
-    init(frame: CGRect) {
-        super.init()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         self.frame = frame
-        let numberOfDrops:CGFloat = self.frame.width/40
-        self.transform = CATransform3DMakeRotation(-CGFloat(M_PI)/2, 0, 0, 1);
+        let numberOfDrops:CGFloat = self.frame.height/60
         
         // Wind
         for(var i:CGFloat = 0; i < numberOfDrops; i++) {
-            let drop = Drop(frame: CGRect(x: 0, y: 0, width: CGFloat(5+arc4random_uniform(10)), height: frame.height))
-            drop.position.x = i*frame.height/numberOfDrops + CGFloat(arc4random_uniform(10))
-            self.addSublayer(drop)
+            let blow = Blow(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: CGFloat(5+arc4random_uniform(10))))
+            blow.position.y = i*frame.height/numberOfDrops + CGFloat(arc4random_uniform(10))
+            self.layer.addSublayer(blow)
         }
         
     }

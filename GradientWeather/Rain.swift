@@ -10,13 +10,11 @@ import UIKit
 
 class Rain:UIView {
     
-    var drops:[Drop]! = []
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.frame = frame
-        let numberOfDrops:CGFloat = self.frame.width/40
+        let numberOfDrops:CGFloat = self.frame.width/60
         
         // Rain
         for(var i:CGFloat = 0; i < numberOfDrops; i++) {

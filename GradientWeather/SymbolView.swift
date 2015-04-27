@@ -15,7 +15,7 @@ class SymbolView:UIView, UIGestureRecognizerDelegate {
     
     required init(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }
     
-    init(frame:CGRect, weather: NSDictionary) {
+    init(frame:CGRect, weather: NSDictionary?) {
         super.init(frame: frame)
         
         self.weather = weather
@@ -28,28 +28,37 @@ class SymbolView:UIView, UIGestureRecognizerDelegate {
     //MARK: Private Methods
     private func setSymbols() {
         
-        var code:Int = (weather.valueForKeyPath("global.code") as! String).toInt()!
+        var code:Int
+        if weather != nil {
+            code = (weather.valueForKeyPath("global.code") as! String).toInt()!
+        } else {
+            code = 20
+        }
         
-        switch 21 {
+        switch code {
         case 25,31,33,34,36,3200:
             generateSun()
+            break
         case 5,6,10...12,35,40,45,47:
             generateRain()
+            break
         case 5,7...9,13...18,41...43,46:
             generateSnow()
+            break
         case 0...4,23,24,37...39:
             generateWind()
+            break
         case 19...22,26...30,44:
             generateCloud()
             break
         default:
-            println("Code \(code) unknown.")
+            println("[ERROR] Code \(code) unknown.")
             break
         }
     }
     
     private func generateSun() {
-        println("Generating Sun...")
+        println("[DEBUG] Generating Sun...")
         
         symbol = Sun(frame: CGRect(x: self.frame.width/3, y: 20, width: 95, height: 95))
         symbol.backgroundColor = UIColor.redColor()
@@ -58,25 +67,25 @@ class SymbolView:UIView, UIGestureRecognizerDelegate {
     }
     
     private func generateRain() {
-        println("Generating Rain...")
+        println("[DEBUG] Generating Rain...")
         let rain = Rain(frame: self.frame)
         self.addSubview(rain)
     }
     
     private func generateSnow() {
-        println("Generating Snow...")
+        println("[DEBUG] Generating Snow...")
     }
     
     private func generateWind() {
-        println("Generating Wind...")
+        println("[DEBUG] Generating Wind...")
         let wind = Wind(frame: self.frame)
-        self.layer.addSublayer(wind)
+        self.addSubview(wind)
     }
     
     private func generateCloud() {
-        println("Generating Cloud...")
+        println("[DEBUG] Generating Cloud...")
         let sky = Sky(frame: self.frame)
-        self.layer.addSublayer(sky)
+        self.addSubview(sky)
     }
     
 }

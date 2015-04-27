@@ -30,44 +30,79 @@ class VideoView:UIView, UIGestureRecognizerDelegate {
         self.moviePlayer.contentURL = movieUrl
         moviePlayer.view.frame = self.frame
         moviePlayer.fullscreen = true
+        moviePlayer.scalingMode = MPMovieScalingMode.AspectFill
         self.addSubview(moviePlayer.view)
         
         shapeView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         shapeView.center = self.center
         
-        let circle = CAShapeLayer()
-        circle.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
-        circle.path = UIBezierPath(ovalInRect: circle.frame).CGPath
-        circle.fillColor = UIColor(red:0.99, green:0.31, blue:0.32, alpha:1).CGColor
-        shapeView.layer.addSublayer(circle)
+        let triangle = CAShapeLayer()
+        triangle.frame = CGRect(origin: CGPointZero, size: shapeView.frame.size)
+        var trianglePath = CGPathCreateMutable()
+        CGPathMoveToPoint(trianglePath, nil, 0, 0)
+        CGPathAddLineToPoint(trianglePath, nil, 0, 100)
+        CGPathAddLineToPoint(trianglePath, nil, 100, 0)
+        CGPathAddLineToPoint(trianglePath, nil, 0, 0)
+        triangle.path = trianglePath
+        triangle.fillColor = UIColor(red:0.459, green:0.631, blue:0.62, alpha:1).CGColor
+        shapeView.layer.addSublayer(triangle)
         
         let shapeAnimation = CABasicAnimation(keyPath: "transform.scale")
-        shapeAnimation.toValue = 100
+        shapeAnimation.fromValue = 0.01
+        shapeAnimation.toValue = 1
         shapeAnimation.duration = 1
         shapeAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         shapeAnimation.fillMode = kCAFillModeForwards
         shapeAnimation.removedOnCompletion = false
-        circle.addAnimation(shapeAnimation, forKey: "Scale")
+        triangle.addAnimation(shapeAnimation, forKey: "Scale")
         
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "launchVideo:")
         tapGesture.delegate = self
         shapeView.addGestureRecognizer(tapGesture)
+        
+        self.moviePlayer.requestThumbnailImagesAtTimes([0], timeOption: MPMovieTimeOption.NearestKeyFrame)
         
         self.addSubview(shapeView)
         
     }
     
     func launchVideo(recognizer:UITapGestureRecognizer) {
-        let fadeOut = CABasicAnimation(keyPath: "opacity")
-        fadeOut.toValue = 0
-        fadeOut.duration = 0.5
-        fadeOut.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        fadeOut.fillMode = kCAFillModeForwards
-        fadeOut.removedOnCompletion = false
         
-        shapeView.layer.addAnimation(fadeOut, forKey: "fadeOut")
-        moviePlayer.play()
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.shapeView.transform = CGAffineTransformMakeScale(0.25, 0.25)
+        }) { (finished) -> Void in
+            if finished {
+                UIView.animateWithDuration(1.0, animations: { () -> Void in
+                    self.shapeView.frame.origin = CGPoint(x: 25, y: 10)
+                }, completion: { (finished) -> Void in
+                    if finished {
+                        self.moviePlayer.play()
+                        self.addBar()
+                    }
+                })
+            }
+        }
+    }
+    
+    func addBar() {
+        let bar = CAShapeLayer();
+        bar.bounds = CGRect(origin: CGPointZero, size: CGSize(width: 20, height: 0))
+        bar.path = UIBezierPath(rect: bar.bounds).CGPath
+        bar.fillColor = UIColor(red:0.459, green:0.631, blue:0.62, alpha:1).CGColor
+        self.moviePlayer.view.layer.addSublayer(bar)
         
+        let animationBar = CABasicAnimation(keyPath: "path")
+        animationBar.fromValue = bar.path
+        animationBar.toValue = UIBezierPath(rect: CGRect(origin: CGPointZero, size: CGSize(width: 20, height: 200))).CGPath
+        animationBar.duration = self.moviePlayer.duration
+        animationBar.fillMode = kCAFillModeForwards
+        animationBar.removedOnCompletion = false;
+        
+        UIView.animateWithDuration(self.moviePlayer.duration, animations: { () -> Void in
+            self.shapeView.frame.origin = CGPoint(x: self.shapeView.frame.origin.x, y: self.frame.height)
+        }, completion: nil)
+        
+        bar.addAnimation(animationBar, forKey: "Increase")
     }
     
     

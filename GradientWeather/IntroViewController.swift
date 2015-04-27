@@ -17,12 +17,14 @@ class IntroViewController:UIViewController, CLLocationManagerDelegate {
     var videoView:VideoView!
     var size:CGSize!
     var origin:CGPoint!
-    var weather:NSDictionary!
+    var weather:NSDictionary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        launchLocalization()
+//        launchLocalization()
+        
+        weather = nil
         
         let numberOfDevices:CGFloat = 1
         

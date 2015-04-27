@@ -12,11 +12,12 @@ import UIKit
 
 class GradientView: UIView {
     
-    var weather:NSDictionary!
+    var weather:NSDictionary?
     var timeGradientProperties:(colors:[CGColor]!, locations:[CGFloat]!, startPoint:CGPoint!, endPoint:CGPoint!)!
     let pictoLocationView:UIImageView! = UIImageView()
     let fromLabel:UILabel! = UILabel()
     let locationLabel:UILabel! = UILabel()
+    let countryLabel:UILabel! = UILabel()
     
     let pictoDateView:UIImageView! = UIImageView()
     let receivedLabel:UILabel! = UILabel()
@@ -30,12 +31,10 @@ class GradientView: UIView {
         super.init(coder: aDecoder)
     }
     
-    init(frame: CGRect, weather: NSDictionary) {
+    init(frame: CGRect, weather: NSDictionary?) {
         super.init(frame: frame)
         
         self.weather = weather
-        
-        println(self.weather)
         
         setPictoViews()
         setLabels()
@@ -64,12 +63,20 @@ class GradientView: UIView {
 //        fromLabel.textColor = UIColor(red:0.008, green:0.059, blue:0.114, alpha:1)
         fromLabel.textColor = UIColor.whiteColor()
         fromLabel.textAlignment = NSTextAlignment.Center
-        
-        locationLabel.text = (weather.valueForKeyPath("location.city") as! String)
+        if weather == nil {
+            locationLabel.text = "Bourges"
+        } else {
+            locationLabel.text = weather?.valueForKeyPath("location.city") as? String
+        }
         locationLabel.font = UIFont(name: "Apercu-medium", size: 80)
 //        locationLabel.textColor = UIColor(red:0.008, green:0.059, blue:0.114, alpha:1)
         locationLabel.textColor = UIColor.whiteColor()
         locationLabel.textAlignment = NSTextAlignment.Center
+        
+        countryLabel.font = UIFont(name: "Apercu-medium", size: 40)
+        countryLabel.textColor = UIColor.whiteColor()
+        countryLabel.textAlignment = NSTextAlignment.Center
+        countryLabel.text = weather?.valueForKeyPath("location.country") as? String
         
         receivedLabel.text = "On the"
         receivedLabel.font = fromLabel.font
@@ -89,6 +96,7 @@ class GradientView: UIView {
         self.addSubview(dateLabel)
         self.addSubview(fromLabel)
         self.addSubview(locationLabel)
+        self.addSubview(countryLabel)
         
     }
     
@@ -96,6 +104,7 @@ class GradientView: UIView {
         pictoLocationView.setTranslatesAutoresizingMaskIntoConstraints(false)
         fromLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         locationLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        countryLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         pictoDateView.setTranslatesAutoresizingMaskIntoConstraints(false)
         receivedLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -109,6 +118,9 @@ class GradientView: UIView {
         
         let locationLabelConstraintPositionY = NSLayoutConstraint(item: self.locationLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.fromLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 20)
         let locationLabelConstraintPositionX = NSLayoutConstraint(item: self.locationLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.pictoLocationView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+        
+        let countryLabelConstraintPositionY = NSLayoutConstraint(item: self.countryLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.locationLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 20)
+        let countryLabelConstraintPositionX = NSLayoutConstraint(item: self.countryLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.locationLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
         
         let pictoDateViewConstraintPositionY = NSLayoutConstraint(item: self.pictoDateView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -100)
         let pictoDateViewConstraintCenterX = NSLayoutConstraint(item: self.pictoDateView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
@@ -125,6 +137,8 @@ class GradientView: UIView {
         self.addConstraint(fromLabelConstraintPositionY)
         self.addConstraint(locationLabelConstraintPositionX)
         self.addConstraint(locationLabelConstraintPositionY)
+        self.addConstraint(countryLabelConstraintPositionX)
+        self.addConstraint(countryLabelConstraintPositionY)
         
         self.addConstraint(pictoDateViewConstraintCenterX)
         self.addConstraint(pictoDateViewConstraintPositionY)
@@ -182,11 +196,10 @@ class GradientView: UIView {
     
     override func drawRect(rect: CGRect) {
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = ""
+        //TODO: Create DateFormatter to Parse YQL Date Format
         
-//        let hour:Int = getHours(NSDate())
-        let hour:Int = 19
+        let hour:Int = getHours(NSDate())
+//        let hour:Int = 19
         
         switch hour {
             case 0..<4:
@@ -220,8 +233,16 @@ class GradientView: UIView {
         let context = UIGraphicsGetCurrentContext()
         var colorSpace = CGColorSpaceCreateDeviceRGB()
         
-        var code:Int = (weather.valueForKeyPath("global.code") as! String).toInt()!
-        var temperature:Int = (weather.valueForKeyPath("global.temp") as! String).toInt()!
+        var code:Int
+        var temperature:Int
+        
+        if weather != nil {
+            code = (weather!.valueForKeyPath("global.code") as! String).toInt()!
+            temperature = (weather!.valueForKeyPath("global.temp") as! String).toInt()!
+        } else {
+            code = 28
+            temperature = 25
+        }
         
         var temperatureScale:Gradients.temperatureScale!
         

@@ -23,11 +23,9 @@ class Drop: CAGradientLayer {
         
         self.bounds = frame
         self.heightOfSuperLayer = self.frame.height
-        
         self.bounds.size = CGSize(width: frame.width, height: CGFloat(175+arc4random_uniform(100)))
-        self.needsLayout()
-        self.layoutIfNeeded()
-        self.position.y = -(self.bounds.height + CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer))))
+        self.opacity = 0.75+(Float(arc4random()) / Float(UINT32_MAX))*0.25
+        self.position.y = -CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer)))*0.5
         self.anchorPoint = CGPoint(x: 0.5, y: 1)
         setGradient()
         setAnimation()
@@ -43,20 +41,22 @@ class Drop: CAGradientLayer {
     }
     
     func setAnimation() {
-        distance = self.position.y + self.heightOfSuperLayer*1.5;
+        distance = self.position.y + self.heightOfSuperLayer;
         
         // Animated Drop Fall
         dropFallAnimation = CABasicAnimation(keyPath: "position.y")
         dropFallAnimation.duration = CFTimeInterval(distance*velocity)
+        dropFallAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         dropFallAnimation.fromValue = self.position.y
         dropFallAnimation.toValue = self.heightOfSuperLayer + self.bounds.height
         
         // Animated Drop Disappearance
         dropDisappearanceAnimation = CABasicAnimation(keyPath: "opacity")
-        dropDisappearanceAnimation.duration = dropFallAnimation.duration/3.5
+        dropDisappearanceAnimation.duration = dropFallAnimation.duration/2.5
         dropDisappearanceAnimation.toValue = 0.0
         dropDisappearanceAnimation.fillMode = kCAFillModeForwards
-        dropDisappearanceAnimation.beginTime = dropFallAnimation.duration/3.5
+        dropDisappearanceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        dropDisappearanceAnimation.beginTime = dropFallAnimation.duration/2.5
         
         // One animation to rule them all
         masterAnimation = CAAnimationGroup();
@@ -71,9 +71,11 @@ class Drop: CAGradientLayer {
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         if(flag) {
             // Update randomly many properties
-            self.position.y = -(self.bounds.height + CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer))))
-            distance = self.position.y + self.heightOfSuperLayer*1.5
+            self.position.y = -CGFloat(arc4random_uniform(UInt32(self.heightOfSuperLayer)))
+            self.opacity = 0.75+(Float(arc4random()) / Float(UINT32_MAX))*0.25
+            distance = self.position.y + self.heightOfSuperLayer
             dropFallAnimation.duration = CFTimeInterval(distance*velocity)
+            dropDisappearanceAnimation.duration = dropFallAnimation.duration/2.5
             masterAnimation.duration = dropFallAnimation.duration
 
             // Let's go to animate!
