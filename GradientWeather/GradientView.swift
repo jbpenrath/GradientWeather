@@ -12,8 +12,6 @@ import UIKit
 
 class GradientView: UIView {
     
-    typealias CSTweenTimingFunction = (CGFloat, CGFloat, CGFloat, CGFloat)->CGFloat
-    
     var weather:NSDictionary?
     var timeGradientProperties:(colors:[CGColor]!, locations:[CGFloat]!, startPoint:CGPoint!, endPoint:CGPoint!)!
     let pictoLocationView:UIImageView! = UIImageView()
@@ -153,17 +151,11 @@ class GradientView: UIView {
     }
     
     func animate() {
-        
-        var number:CSTweenTimingFunction = CSTweenEaseOutExpo
         let from:CGFloat = 0
         let to:CGFloat = 1
         let duration:CGFloat = 1
         
-        CSTween.tweenFrom(from, to: to, duration: duration, timingFunction: number, updateBlock: { (operation:CSTweenOperation) -> Void in
-            
-            }) {nil}
-        
-        CSTween.tweenFrom(CGFloat(0.0), to: CGFloat(1.0), duration: CGFloat(0.0), timingFunction: number, updateBlock: { (operation:CSTweenOperation!) -> Void in
+        CSTween.tweenFrom(CGFloat(0), to: CGFloat(1), duration: 2.0, timingFunction: nil, updateBlock: { (operation:CSTweenOperation!) -> Void in
             self.pictoLocationView.transform = CGAffineTransformMakeScale(3, 3)
             self.pictoLocationView.alpha = 0
             }) { (finished:Bool) -> Void in

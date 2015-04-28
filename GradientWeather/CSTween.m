@@ -63,7 +63,7 @@ static CSTween *instance = nil;
         self.operations = [[NSMutableArray alloc] init];
         self.expiredOperations = [[NSMutableArray alloc] init];
         
-        defaultTimingFunction = &CSTweenEaseLinear;
+        defaultTimingFunction = &CSTweenEaseInOutExpo;
     }
     
     return self;
