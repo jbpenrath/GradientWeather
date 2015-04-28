@@ -32,7 +32,7 @@ class SymbolView:UIView, UIGestureRecognizerDelegate {
         if weather != nil {
             code = (weather.valueForKeyPath("global.code") as! String).toInt()!
         } else {
-            code = 20
+            code = 6
         }
         
         switch code {

@@ -12,6 +12,8 @@ import UIKit
 
 class GradientView: UIView {
     
+    typealias CSTweenTimingFunction = CFunctionPointer<(CGFloat, CGFloat, CGFloat, CGFloat) -> CGFloat>
+    
     var weather:NSDictionary?
     var timeGradientProperties:(colors:[CGColor]!, locations:[CGFloat]!, startPoint:CGPoint!, endPoint:CGPoint!)!
     let pictoLocationView:UIImageView! = UIImageView()
@@ -154,13 +156,22 @@ class GradientView: UIView {
         let from:CGFloat = 0
         let to:CGFloat = 1
         let duration:CGFloat = 1
+       
+        JPTween.sharedInstance.tweenFrom(1, to:0, duration:1, delay:0, timingFunction:JPTweenEaseInBounce, updateBlock:{(operation:JPTweenOperation) -> Void in
+            self.pictoLocationView.alpha = operation.value
+        }, completeBlock:nil)
         
-        CSTween.tweenFrom(CGFloat(0), to: CGFloat(1), duration: 2.0, timingFunction: nil, updateBlock: { (operation:CSTweenOperation!) -> Void in
-            self.pictoLocationView.transform = CGAffineTransformMakeScale(3, 3)
-            self.pictoLocationView.alpha = 0
-            }) { (finished:Bool) -> Void in
-            
-        }
+//        CSTween.tweenFrom(1, to: 0, duration: 2.0, timingFunction: nil, updateBlock: { (operation:CSTweenOperation!) -> Void in
+//            self.pictoLocationView.alpha = operation.value
+//            }) { (finished:Bool) -> Void in
+//            
+//        }
+//        
+//        CSTween.tweenFrom(1, to: 3, duration: 2.0, timingFunction: nil, updateBlock: { (operation:CSTweenOperation!) -> Void in
+//            self.pictoLocationView.transform = CGAffineTransformMakeScale(operation.value, operation.value)
+//            }) { (finished:Bool) -> Void in
+//                
+//        }
         
 //        UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
 //            self.pictoLocationView.transform = CGAffineTransformMakeScale(3, 3)

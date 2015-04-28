@@ -101,7 +101,7 @@ static CSTween *instance = nil;
     operation.endValue = to;
     operation.duration = duration;
     operation.delay = delay;
-    operation.timingFunction = timingFunction;
+    operation.timingFunction = CSTweenEaseInOutExpo;
     operation.updateBlock = updateBlock;
     operation.completeBlock = completeBlock;
     
