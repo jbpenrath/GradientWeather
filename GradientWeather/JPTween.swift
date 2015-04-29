@@ -177,6 +177,9 @@ class JPTween {
     
     //MARK - Operations Management
     func addTweenOperation(operation:JPTweenOperation!) {
+        
+        println("Tweening")
+        
         if nil != operation {
             
             if self.operations.containsObject(operation) {

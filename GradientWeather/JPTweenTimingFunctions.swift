@@ -16,7 +16,7 @@
 //  Copyright © 2001 Robert Penner
 //  All rights reserved.
 //
-
+import Darwin
 
 func JPTweenEaseLinear (time:Float, begin:Float, change:Float, duration:Float) -> Float {
     return change * time / duration + begin
@@ -46,7 +46,7 @@ func JPTweenEaseInOutBack (var t:Float, b:Float, c:Float, d:Float) -> Float {
 }
 
 func JPTweenEaseInBounce (t:Float, b:Float, c:Float, d:Float) -> Float {
-    return c - TweenEaseOutBounce(d-t, 0, c, d) + b;
+    return c - JPTweenEaseOutBounce(d-t, 0, c, d) + b;
 }
 
 func JPTweenEaseOutBounce (var t:Float, b:Float, c:Float, d:Float) -> Float {
@@ -65,7 +65,7 @@ func JPTweenEaseOutBounce (var t:Float, b:Float, c:Float, d:Float) -> Float {
 }
 
 func JPTweenEaseInOutBounce (t:Float, b:Float, c:Float, d:Float) -> Float {
-    return t < d/2 ? TweenEaseInBounce(t*2, 0, c, d) * 0.5 + b : TweenEaseInBounce(t*2-d, 0, c, d) * 0.5 + c*0.5 + b
+    return t < d/2 ? JPTweenEaseInBounce(t*2, 0, c, d) * 0.5 + b : JPTweenEaseInBounce(t*2-d, 0, c, d) * 0.5 + c*0.5 + b
 }
 
 func JPTweenEaseInCirc (var t:Float, b:Float, c:Float, d:Float) -> Float {

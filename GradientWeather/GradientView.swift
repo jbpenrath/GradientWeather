@@ -12,8 +12,6 @@ import UIKit
 
 class GradientView: UIView {
     
-    typealias CSTweenTimingFunction = CFunctionPointer<(CGFloat, CGFloat, CGFloat, CGFloat) -> CGFloat>
-    
     var weather:NSDictionary?
     var timeGradientProperties:(colors:[CGColor]!, locations:[CGFloat]!, startPoint:CGPoint!, endPoint:CGPoint!)!
     let pictoLocationView:UIImageView! = UIImageView()
@@ -156,65 +154,50 @@ class GradientView: UIView {
         let from:CGFloat = 0
         let to:CGFloat = 1
         let duration:CGFloat = 1
-       
-        JPTween.sharedInstance.tweenFrom(1, to:0, duration:1, delay:0, timingFunction:JPTweenEaseInBounce, updateBlock:{(operation:JPTweenOperation) -> Void in
+        
+        let pointer = UnsafeMutablePointer<(CGFloat, CGFloat, CGFloat, CGFloat) -> CGFloat>.alloc(1)
+        pointer.initialize(CSTweenEaseInOutExpo)
+        let cPointer = COpaquePointer(pointer)
+        let functionPointer = CFunctionPointer<(CGFloat, CGFloat, CGFloat, CGFloat) -> CGFloat>(cPointer)
+        let CSTweenEaseInOutExpoPointer:CSTweenTimingFunction = functionPointer
+        
+        CSTween.tweenFrom(1.0, to: 0.0, duration: 0.8, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
             self.pictoLocationView.alpha = operation.value
-        }, completeBlock:nil)
+            }, completeBlock: nil)
+        CSTween.tweenFrom(1.0, to: 3.0, duration: 0.8, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.pictoLocationView.transform = CGAffineTransformMakeScale(operation.value, operation.value)
+            }, completeBlock:nil)
+    
+        CSTween.tweenFrom(1.0, to: 0.0, duration: 0.6, delay:0.2, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.fromLabel.alpha = operation.value
+            }, completeBlock: nil)
+        CSTween.tweenFrom(1.0, to: 3.0, duration: 0.6, delay:0.2, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.fromLabel.transform = CGAffineTransformMakeScale(operation.value, operation.value)
+            }, completeBlock:nil)
         
-//        CSTween.tweenFrom(1, to: 0, duration: 2.0, timingFunction: nil, updateBlock: { (operation:CSTweenOperation!) -> Void in
-//            self.pictoLocationView.alpha = operation.value
-//            }) { (finished:Bool) -> Void in
-//            
-//        }
-//        
-//        CSTween.tweenFrom(1, to: 3, duration: 2.0, timingFunction: nil, updateBlock: { (operation:CSTweenOperation!) -> Void in
-//            self.pictoLocationView.transform = CGAffineTransformMakeScale(operation.value, operation.value)
-//            }) { (finished:Bool) -> Void in
-//                
-//        }
+        CSTween.tweenFrom(1.0, to: 0.0, duration: 0.4, delay:0.4, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.locationLabel.alpha = operation.value
+            }, completeBlock: nil)
+        CSTween.tweenFrom(1.0, to: 3.0, duration: 0.4, delay:0.4, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.locationLabel.transform = CGAffineTransformMakeScale(operation.value, operation.value)
+            }, completeBlock:nil)
         
-//        UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-//            self.pictoLocationView.transform = CGAffineTransformMakeScale(3, 3)
-//            self.pictoLocationView.alpha = 0
-//        }) { (finished) -> Void in
-//            if finished {}
-//        }
+        CSTween.tweenFrom(0.0, to: 1.0, duration: 0.8, delay:0.4, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.pictoDateView.alpha = operation.value
+            self.pictoDateView.transform = CGAffineTransformMakeScale(operation.value, operation.value)
+            }, completeBlock: nil)
         
-        UIView.animateWithDuration(0.6, delay: 0.2, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            self.fromLabel.transform = CGAffineTransformMakeScale(3, 3)
-            self.fromLabel.alpha = 0
-            }) { (finished) -> Void in
-                if finished {}
-        }
+        CSTween.tweenFrom(0.0, to: 1.0, duration: 0.6, delay:0.6, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.receivedLabel.alpha = operation.value
+            self.receivedLabel.transform = CGAffineTransformMakeScale(operation.value, operation.value)
+            }, completeBlock: nil)
         
-        UIView.animateWithDuration(0.4, delay: 0.4, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            self.locationLabel.transform = CGAffineTransformMakeScale(3, 3)
-            self.locationLabel.alpha = 0
-            }) { (finished) -> Void in
-                if finished {}
-        }
-        
-        UIView.animateWithDuration(0.8, delay: 0.4, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            self.pictoDateView.transform = CGAffineTransformMakeScale(1, 1)
-            self.pictoDateView.alpha = 1
-            }) { (finished) -> Void in
-                if finished {}
-        }
-        
-        UIView.animateWithDuration(0.6, delay: 0.6, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            self.receivedLabel.transform = CGAffineTransformMakeScale(1, 1)
-            self.receivedLabel.alpha = 1
-            }) { (finished) -> Void in
-                if finished {}
-        }
-        
-        UIView.animateWithDuration(1.0, delay: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-//            self.dateLabel.transform = CGAffineTransformMakeScale(1, 1)
-            self.dateLabel.transform = CGAffineTransformMakeTranslation(0, 0)
-            self.dateLabel.alpha = 1
-            }) { (finished) -> Void in
-                if finished {}
-        }
+        CSTween.tweenFrom(0.0, to: 1.0, duration: 1.0, delay:0.8, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.locationLabel.alpha = operation.value
+            }, completeBlock: nil)
+        CSTween.tweenFrom(-50.0, to: 0.0, duration: 1.0, delay:0.8, timingFunction: CSTweenEaseInOutExpoPointer, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.locationLabel.transform = CGAffineTransformMakeTranslation(operation.value, 0)
+            }, completeBlock: nil)
     }
     
     override func drawRect(rect: CGRect) {
