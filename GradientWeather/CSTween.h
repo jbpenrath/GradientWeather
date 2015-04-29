@@ -11,6 +11,41 @@
 
 #import "CSTweenTimingFunctions.h"
 
+typedef enum : NSUInteger {
+    TweenEaseLinear,
+    TweenEaseInBack,
+    TweenEaseOutBack,
+    TweenEaseInOutBack,
+    TweenEaseInBounce,
+    TweenEaseOutBounce,
+    TweenEaseInOutBounce,
+    TweenEaseInCirc,
+    TweenEaseOutCirc,
+    TweenEaseInOutCirc,
+    TweenEaseInCubic,
+    TweenEaseOutCubic,
+    TweenEaseInOutCubic,
+    TweenEaseInElastic,
+    TweenEaseOutElastic,
+    TweenEaseInOutElastic,
+    TweenEaseInExpo,
+    TweenEaseOutExpo,
+    TweenEaseInOutExpo,
+    TweenEaseInQuad,
+    TweenEaseOutQuad,
+    TweenEaseInOutQuad,
+    TweenEaseInQuart,
+    TweenEaseOutQuart,
+    TweenEaseInOutQuart,
+    TweenEaseInQuint,
+    TweenEaseOutQuint,
+    TweenEaseInOutQuint,
+    TweenEaseInSine,
+    TweenEaseOutSine,
+    TweenEaseInOutSine
+} TweenTimingFunctionName;
+
+
 @class CSTweenOperation;
 
 typedef CGFloat(*CSTweenTimingFunction)(CGFloat, CGFloat, CGFloat, CGFloat);
@@ -44,7 +79,7 @@ typedef void (^CSTweenCompleteBlock)(BOOL finished);
 
 + (CSTweenOperation *)tweenFrom:(CGFloat)from to:(CGFloat)to
                        duration:(CGFloat)duration
-                 timingFunction:(CSTweenTimingFunction)timingFunction
+             timingFunctionName:(TweenTimingFunctionName)timingFunctionName
                     updateBlock:(CSTweenUpdateBlock)updateBlock
                   completeBlock:(CSTweenCompleteBlock)completeBlock;
 
@@ -52,7 +87,7 @@ typedef void (^CSTweenCompleteBlock)(BOOL finished);
                              to:(CGFloat)to
                        duration:(CGFloat)duration
                           delay:(CGFloat)delay
-                 timingFunction:(CSTweenTimingFunction)timingFunction
+             timingFunctionName:(TweenTimingFunctionName)timingFunctionName
                     updateBlock:(CSTweenUpdateBlock)updateBlock
                   completeBlock:(CSTweenCompleteBlock)completeBlock;
 

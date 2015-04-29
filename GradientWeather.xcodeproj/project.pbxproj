@@ -34,7 +34,6 @@
 		29D013DC1AEE3F1E007C84CF /* CSTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D013D91AEE3F1E007C84CF /* CSTween.m */; };
 		29D013DD1AEE3F1E007C84CF /* CSTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D013DB1AEE3F1E007C84CF /* CSTweenTimingFunctions.m */; };
 		7702D7051AD1566200956F54 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7702D7041AD1566200956F54 /* Drop.swift */; };
-		7705302A1AF02AA1007433FE /* JPTweenTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770530291AF02AA1007433FE /* JPTweenTimingFunctions.swift */; };
 		770949691AD852FA00781DC1 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770949681AD852FA00781DC1 /* Rain.swift */; };
 		77344ABE1AD595F9006C5FC9 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77344ABD1AD595F9006C5FC9 /* Cloud.swift */; };
 		779D74901AD92BD000982565 /* SnowFlake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D748F1AD92BD000982565 /* SnowFlake.swift */; };
@@ -100,7 +99,6 @@
 		29D013DB1AEE3F1E007C84CF /* CSTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTweenTimingFunctions.m; sourceTree = "<group>"; };
 		29D013DE1AEE3F56007C84CF /* unanime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "unanime-Bridging-Header.h"; sourceTree = "<group>"; };
 		7702D7041AD1566200956F54 /* Drop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
-		770530291AF02AA1007433FE /* JPTweenTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPTweenTimingFunctions.swift; sourceTree = "<group>"; };
 		770949681AD852FA00781DC1 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		77344ABD1AD595F9006C5FC9 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		779D748F1AD92BD000982565 /* SnowFlake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowFlake.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 		29D013D71AEE3F0F007C84CF /* Tween */ = {
 			isa = PBXGroup;
 			children = (
-				770530291AF02AA1007433FE /* JPTweenTimingFunctions.swift */,
 				29D013D81AEE3F1E007C84CF /* CSTween.h */,
 				29D013D91AEE3F1E007C84CF /* CSTween.m */,
 				29D013DA1AEE3F1E007C84CF /* CSTweenTimingFunctions.h */,
@@ -483,7 +480,6 @@
 				29D013DC1AEE3F1E007C84CF /* CSTween.m in Sources */,
 				77AEE00F1AE0B9B700F972E1 /* SymbolView.swift in Sources */,
 				290EB5251ADD1B02002E9ECB /* YQL.swift in Sources */,
-				7705302A1AF02AA1007433FE /* JPTweenTimingFunctions.swift in Sources */,
 				77F2A8F61ACDADBA00C5FC98 /* AppDelegate.swift in Sources */,
 				77F2A9181ACDCC6800C5FC98 /* Gradients.swift in Sources */,
 			);
@@ -614,7 +610,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d484899b-51c1-49ef-a366-9d25f2040612";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Hi4S/Documents/iOS/GradientWeather/GradientWeather/unanime-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/JB/Documents/iOS/GradientWeather/GradientWeather/unanime-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -628,7 +624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d484899b-51c1-49ef-a366-9d25f2040612";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Hi4S/Documents/iOS/GradientWeather/GradientWeather/unanime-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/JB/Documents/iOS/GradientWeather/GradientWeather/unanime-Bridging-Header.h";
 			};
 			name = Release;
 		};

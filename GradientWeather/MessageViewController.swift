@@ -26,8 +26,6 @@ class MessageViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         createSymbolView()
-//        let videoView = VideoView(frame: self.view.frame)
-//        self.view.addSubview(videoView)
     }
     
     //MARK: Private methods
@@ -46,6 +44,8 @@ class MessageViewController: UIViewController {
 //        symbolView.transform = CGAffineTransformMakeScale(0.75, 0.75)
 //        symbolView.backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 1.0, alpha: 0.5)
         self.view.addSubview(symbolView)
+        let videoView = VideoView(frame: self.view.frame)
+        self.view.addSubview(videoView)
     }
     
     //MARK: Bullshit methods
