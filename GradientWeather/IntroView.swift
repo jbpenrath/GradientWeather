@@ -96,27 +96,9 @@ class IntroView:UIView {
     
     func launchAnimation() {
         
-//        let pointer = UnsafeMutablePointer<(CGFloat, CGFloat, CGFloat, CGFloat) -> CGFloat>.alloc(1)
-//        pointer.initialize(CSTweenEaseLinear)
-//        let cPointer = COpaquePointer(pointer)
-//        let functionPointer = CFunctionPointer<(CGFloat, CGFloat, CGFloat, CGFloat) -> CGFloat>(cPointer)
-//        let CSTweenEaseInOutQuadPointer:CSTweenTimingFunction = functionPointer
-        
-        CSTween.tweenFrom(1.0, to: 40/circle.frame.height, duration: 0.75, delay:0, timingFunctionName: TweenEaseInOutExpo, updateBlock: { (operation:CSTweenOperation!) -> Void in
-            self.circle.transform = CATransform3DMakeScale(operation.value, operation.value, 1.0)
+        CSTween.tweenFrom(1.0, to: 40/self.frame.height, duration: 0.75, timingFunctionName: TweenEaseLinear, updateBlock: { (operation:CSTweenOperation!) -> Void in
+            self.circle.transform = CATransform3DMakeAffineTransform(CGAffineTransformMakeScale(operation.value, operation.value))
         }, completeBlock: nil)
-        
-//        let animationScale = CABasicAnimation(keyPath: "transform.scale")
-//        animationScale.fromValue = 1
-//        animationScale.toValue = 40/circle.frame.height
-//        animationScale.duration = 0.75
-//        animationScale.fillMode = kCAFillModeForwards
-//        animationScale.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-//        animationScale.removedOnCompletion = false
-//        
-//    
-//        
-//        circle.addAnimation(animationScale, forKey: "circleScalingDown")
         
     }
     
